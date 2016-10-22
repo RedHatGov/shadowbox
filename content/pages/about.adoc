@@ -2,21 +2,44 @@
 :author: Jamie Duncan
 :date: 2016-10-20 11:32
 :modified: 2016-10-20 11:32
-:slug: about
-:summary: a bit about me
+:slug: about-shadowbox
+:summary: Why Shadowbox?
 :category: page
-:tags: about,life,jduncan
 
-== Dad, Husband, Linux Geek, F1 Fan, Farm Owner
+== It's all about Solutions
 
-But not always in that order. I like to think of myself as a problem solver in everything that I do.
+It is easy to demonstrate a product. A product is a piece of technology. Smart people can take that technology and install it on a laptop in a VM, in AWS, or in a lab somewhere in order to show other people for a sales meeting or a workshop or a lab.
 
-I apply that idea to Linux and Open Source software for my day job.
+But what happens when you need to show someone a Solution? What's the difference between the two, you ask? A product is a piece of technology. A Solution is using multiple products to solve an actual problem. That can be hard for a technical resource in the field for a few reasons
 
-I apply it to the 6 acres of land we own every chance I get.
+.Bad Wifi
+Too many customers have low(or no) quality internet access for non-employees. For a lot of Red Hat's products, the bandwidth needs for the UI can make an application look OK or really good (I'm looking at you, CloudForms).
 
-I apply it to being a good man at all times for my wife Molly and daughter Elizabeth.
+.No Wifi
+An equal number of customers have no guest wifi access at all.
 
-And I like to watch a lot of F1 Racing.
+.Resource Limits
+If we can't use the local wifi, we are limited to what we can carry on our backs. That is usually our laptop, which normally has no more than 16GB of RAM. That means I can show someone (a simplified install of) OpenStack, but I can't do any meaningful work on it for a demo.
 
-This site will include any and all of these topics at various times.
+== Previous Attempts at a Solution
+
+People have tried to solve this in multiple ways over the years with things like
+
+* beefier laptops
+* crates of laptops
+* shipping crates of server-grade hardware
+* The Canonical 'orange box'
+
+These all had benefits, but were mostly built out with fatal flaws. They were either still not enough horsepower, too heavy, too expensive, or all three.
+
+== Defining the problem
+
+The hardest product demo that we have is to show OpenStack installed via Director with Ceph. It requires
+
+* 2 physical NICs
+* IPMI
+* 7 nodes of sufficient horsepower to do work on after OSP is up and running
+
+You can get around it by hacking up the Undercloud Heat Templates and using ssh_ipmi, but to be able to do in a true OSP Director install with Ceph in a fully disconnected environment is the hardest product demo we have. If we can do that, then we can do any Red Hat demo you can imagine.
+
+So that's what we solved for with Shadowbox.
