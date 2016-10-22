@@ -1,0 +1,22 @@
+= About
+:author: Jamie Duncan
+:date: 2016-10-20 11:32
+:modified: 2016-10-20 11:32
+:slug: about
+:summary: a bit about me
+:category: page
+:tags: about,life,jduncan
+
+== Dad, Husband, Linux Geek, F1 Fan, Farm Owner
+
+But not always in that order. I like to think of myself as a problem solver in everything that I do.
+
+I apply that idea to Linux and Open Source software for my day job.
+
+I apply it to the 6 acres of land we own every chance I get.
+
+I apply it to being a good man at all times for my wife Molly and daughter Elizabeth.
+
+And I like to watch a lot of F1 Racing.
+
+This site will include any and all of these topics at various times.
