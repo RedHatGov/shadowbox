@@ -23,11 +23,15 @@ AUTHOR_FEED_RSS = None
 FEED_RSS = 'feeds/rss.xml'
 
 # Blogroll
-LINKS = ()
+LINKS = (
+        ('Workshop Code', 'http://www.github.com/RedHatGov/automated_workshops'),
+        ('Site Code', 'http://www.github.com/RedHatGov/shadowbox'),
+    )
 
 # Social widget
 SOCIAL = (
         ('twitter', 'http://www.twitter.com/rh_shadowbox'),
+        ('RedHatGov', 'http://www.twitter.com/RedHatGov')
         ('code', 'http://www.github.com/RedHatGov'),
     )
 
