@@ -15,9 +15,11 @@
       {{ article.content }}
     {% if article.album %}
     <h2><a href="{{ SITEURL }}/pages/gallery.html#{{ article.album }}">{{ article.album }}</a></h2>
+    <div class="popup-gallery">
     {% for image in article.galleryimages %}
     <a class="{{ article.album }}" href="{{ SITEURL }}/pictures/gallery/{{ article.album }}/{{ image }}"><img src="{{ SITEURL }}/pictures/thumbnail_square/gallery/{{ article.album }}/{{ image }}"></a>
     {% endfor %}
+    </div>
     {% endif %}
     </div><!-- /.entry-content -->
     {% if DISQUS_SITENAME and SITEURL and article.status != "draft" %}
