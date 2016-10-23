@@ -1,6 +1,6 @@
 {% for album, images in page.gallery.iteritems() %}
 <h2><a name="{{ album }}">{{ album }}</a></h2>
     {% for image in images %}
-    <p><a class="{{ album }}" href="{{ SITEURL }}/pictures/gallery/{{album}}/{{ image }}" title="{{ image }}"><img src="{{ SITEURL }}/pictures/thumbnail_square/gallery/{{ article.album }}/{{ image }}"></a></p>
+    <p><a class="{{ album }}" href="{{ SITEURL }}/pictures/gallery/{{album}}/{{ image }}" title="{{ image }}"><img src="{{ SITEURL }}/pictures/thumbnail_square/gallery/{{ album }}/{{ image }}"></a></p>
     {% endfor %}
 {% endfor %}

@@ -22,7 +22,7 @@ We had gotten approval to put Shadowbox together a couple of months ago, but our
 
 We ended up getting 4 nodes up and running (we ran out of link:http://www.mini-box.com/s.nl/it.A/id.417/.f[Pico PSUs]). On these 4 nodes we were able to run:
 
-.The Infrastructure
+=== The Infrastructure
 * DNS and DHCP for the network
 * RHEV-M on a physical node with DNS/DHCP
 * Gluster on a single node
@@ -30,13 +30,13 @@ We ended up getting 4 nodes up and running (we ran out of link:http://www.mini-b
 
 On top of that we deployed:
 
-.The Platform
+=== The Platform
 * OpenShift 3.3
 * Configured to use the Gluster hardware node for Persistant Volume
 
 Inside OpenShift we deployed a link:https://github.com/jduncan-rva/php-demo-app[PHP web app] that is a simple image uploader application.
 
-.The Demo
-For our 10 minutes we explained what we had made, and then we let everyone in the room connect to the Shadowbox's integrated Wifi. Since we control DNS in that network they were able to browse to our app deployed in OpenShift using an `example.com` domain.
+=== The Demo
+For our 10 minutes on stage we explained what we had made, and then we let everyone in the room connect to the Shadowbox's integrated Wifi. Since we control DNS in that network they were able to browse to our app deployed in OpenShift using an `example.com` domain.
 
 We had a great time, and everything worked just like it was supposed to.
