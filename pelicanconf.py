@@ -23,9 +23,7 @@ AUTHOR_FEED_RSS = None
 FEED_RSS = 'feeds/rss.xml'
 
 # Blogroll
-LINKS = (('RedHatGov GitHub', 'http://www.github.com/RedHatGov'),
-         ('Automated Workshops', 'http://www.github.com/RedHatGov/automated_workshops'),
-         ('Old Blog','http://lostinopensource.wordpress.com'),)
+LINKS = ()
 
 # Social widget
 SOCIAL = (
@@ -85,3 +83,10 @@ THUMBNAIL_DIR = 'thumbs'
 DISQUS_SITENAME = 'localhost-8000-3'
 DISQUS_PUBLIC_KEY = 'Zuy9Hu0Lj35N0FNLnke5ye9No0cJhsBvZKNGJ701eIJQf4adgeKYnGeROOHm1OgG'
 DISQUS_SECRET_KEY = 's8BQwXKdKek2WAAHeIGAo9yzQrAMFDGjmBr3OmYq5IewowmeASmPllkUlkYRipVs'
+
+# Gallery settings
+
+GALLERY_PATH = './content/pictures/gallery'
+RESIZE = [
+        ('gallery', False, 200,200),
+      ]

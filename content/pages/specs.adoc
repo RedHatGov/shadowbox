@@ -1,0 +1,29 @@
+= Specs
+:author: Jamie Duncan
+:date: 2016-10-20 11:32
+:modified: 2016-10-20 11:32
+:slug: shadowbox-specs
+:summary: Shadowbox Specs
+:category: page
+
+== It's all about what you can carry
+
+For field resources like Solutions Architects and Technical folks from the Red Hat BU, showing the world our solutions is all about what you can carry on to a sight.
+
+The Shadowbox is designed to be an ultra-portable server-grade demo/lab environment.
+
+[width="50%",options="header"]
+|=========================================================
+| Spec             | Value
+| Nodes	           | 8
+| Motherboard	     | SUPERMICRO MBD-X10SLL-F-O uATX Server
+| CPU	             | i3-4160 Dual-core hyperthreaded
+| RAM	             | 32GB DDR3
+| HDD	             | Samsung 850 256GB SSD
+| Node Networking  |	2x 1Gbps NIC
+| IPMI             |	Dedicated LAN
+| Networking       |	Cisco WS-C4948-10GE-S 48-port
+| Power	           | 120W per node, 900W total
+| Wifi             |	Linksys 1200AC
+| Form Factor      |	Pelican Storm im2975
+|==========================================================
