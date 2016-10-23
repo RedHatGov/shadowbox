@@ -86,7 +86,7 @@ DISQUS_SECRET_KEY = 's8BQwXKdKek2WAAHeIGAo9yzQrAMFDGjmBr3OmYq5IewowmeASmPllkUlkY
 
 # Gallery settings
 
-GALLERY_PATH = './content/pictures/gallery'
+GALLERY_PATH = 'pictures/gallery'
 RESIZE = [
         ('gallery', False, 200,200),
       ]
