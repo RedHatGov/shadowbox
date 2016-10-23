@@ -3,10 +3,12 @@
 {% block content %}
 <section id="content" class="body">
 {% for album, images in page.gallery.iteritems() %}
+<div class="body">
 <h2><a name="{{ album }}">{{ album }}</a></h2>
     {% for image in images %}
-    <p><a class="{{ album }}" href="{{ SITEURL }}/pictures/gallery/{{album}}/{{ image }}" title="{{ image }}"><img src="{{ SITEURL }}/pictures/thumbnail_square/gallery/{{ album }}/{{ image }}"></a></p>
+    <a class="{{ album }}" href="{{ SITEURL }}/pictures/gallery/{{album}}/{{ image }}" title="{{ image }}"><img src="{{ SITEURL }}/pictures/thumbnail_square/gallery/{{ album }}/{{ image }}"></a>
     {% endfor %}
+</div>
 {% endfor %}
 </div>
 {% endblock %}

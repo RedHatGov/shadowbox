@@ -6,7 +6,7 @@
 :summary: A quick write-up of the first iteration of Shadowbox
 :category: Revs
 :tags: rev0,kingsmill,demo,release
-:gallery: intro-post
+:gallery: kingsmill
 
 == Kingsmill
 
