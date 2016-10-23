@@ -4,8 +4,8 @@
 :modified: 2016-10-20 11:32
 :slug: introducing-shadowbox
 :summary: A quick write-up of the first iteration of Shadowbox
-:category: Revs
-:tags: rev0,kingsmill,demo,release
+:category: Rev0
+:tags: rev0,kingsmill
 :gallery: kingsmill
 
 == Kingsmill
