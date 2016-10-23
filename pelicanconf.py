@@ -31,7 +31,7 @@ LINKS = (
 # Social widget
 SOCIAL = (
         ('twitter', 'http://www.twitter.com/rh_shadowbox'),
-        ('RedHatGov', 'http://www.twitter.com/RedHatGov')
+        ('RedHatGov', 'http://www.twitter.com/RedHatGov'),
         ('code', 'http://www.github.com/RedHatGov'),
     )
 
