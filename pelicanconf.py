@@ -5,7 +5,7 @@ from __future__ import unicode_literals
 AUTHOR = u'Jamie Duncan'
 SITENAME = u'Shadowbox'
 #SITEURL = 'jduncan-rva.github.io'
-SITEURL = 'https://shadowbox.redhatps.com'
+SITEURL = 'https://www.rhshadowbox.com'
 
 PATH = 'content'
 
@@ -14,7 +14,7 @@ TIMEZONE = 'America/New_York'
 DEFAULT_LANG = u'en'
 
 # Feed generation is usually not desired when developing
-FEED_DOMAIN = 'https://shadowbox.redhatps.com'
+FEED_DOMAIN = 'https://www.rhshadowbox.com'
 FEED_ALL_ATOM = 'feeds/all.atom.xml'
 CATEGORY_FEED_ATOM = None
 TRANSLATION_FEED_ATOM = None
