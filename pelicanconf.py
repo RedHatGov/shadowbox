@@ -3,7 +3,7 @@
 from __future__ import unicode_literals
 
 AUTHOR = u'Jamie Duncan'
-SITENAME = u'Shadowbox'
+SITENAME = u'Shadowbox by Red Hat'
 #SITEURL = 'jduncan-rva.github.io'
 SITEURL = 'https://www.rhshadowbox.com'
 
