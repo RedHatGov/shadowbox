@@ -5,7 +5,7 @@
 :slug: summary
 :summary: What this site will be used for
 :category: Rev1
-:tags: shadowbox,project,overview
+:tags: rev1,thanksgiving,trello 
 
 == What's the Plan?
 
