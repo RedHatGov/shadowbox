@@ -26,6 +26,7 @@ FEED_RSS = 'feeds/rss.xml'
 LINKS = (
         ('Workshop Code', 'http://www.github.com/RedHatGov/automated_workshops'),
         ('Site Code', 'http://www.github.com/RedHatGov/shadowbox'),
+        ('Trello', 'https://trello.com/b/KyamOxNo/shadowbox'),
     )
 
 # Social widget
