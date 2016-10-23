@@ -19,6 +19,9 @@
 /* Body */
 body {
     background: #f2f3f3;
+    background: url('https://s3.amazonaws.com/media-p.slid.es/uploads/team-32/images/1574781/corporate-5.svg');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
     color: #000305;
     font-size: 87.5%; /* Base font size: 14px */
     font-family: 'Overpass', Arial, sans-serif;
