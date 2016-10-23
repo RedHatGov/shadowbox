@@ -51,7 +51,7 @@ hr { border: 2px solid #EEEEEE; }
 a {outline: 0;}
 a img {border: 0px; text-decoration: none;}
 a:link, a:visited {
-	color: #008db8;
+	color: #a30000;
 	padding: 0 1px;
 	text-decoration: none;
 }
@@ -157,7 +157,7 @@ img.left, figure.left {float: left; margin: 0 2em 2em 0;}
 	}
 	#banner h1 a:hover, #banner h1 a:active {
 		background: none;
-		color: #008db8;
+		color: #a30000;
 		text-shadow: none;
 	}
 
@@ -190,7 +190,7 @@ img.left, figure.left {float: left; margin: 0 2em 2em 0;}
 	}
 	#banner nav a:hover, #banner nav a:active,
 	#banner nav .active a:link, #banner nav .active a:visited {
-		background: #008db8;
+		background: #a30000;
 		color: #fff;
 		text-shadow: none !important;
 	}
@@ -251,18 +251,18 @@ img.left, figure.left {float: left; margin: 0 2em 2em 0;}
 		padding: 0px 1.5em;
 	}
 	#banner #submenu li a:hover, #banner #submenu li a:active {
-		background: #008db8;
-		border-top: 1px solid #008db8;
-		-moz-border-top: 1px solid #008db8;
-		-webkit-border-top: 1px solid #008db8;
+		background: #a30000;
+		border-top: 1px solid #a30000;
+		-moz-border-top: 1px solid #a30000;
+		-webkit-border-top: 1px solid #a30000;
 		color: #fff;
 		text-decoration: none;
 	}
 	#banner #submenu .active a:link, #banner #submenu .active a:visited {
-		background: #008db8;
-		border-top: 1px solid #008db8;
-		-moz-border-top: 1px solid #008db8;
-		-webkit-border-top: 1px solid #008db8;
+		background: #a30000;
+		border-top: 1px solid #a30000;
+		-moz-border-top: 1px solid #a30000;
+		-webkit-border-top: 1px solid #a30000;
 		color: #fff;
 		text-decoration: none;
 	}
@@ -295,7 +295,7 @@ img.left, figure.left {float: left; margin: 0 2em 2em 0;}
 }
 #featured figure img {display: block; float: right;}
 
-#featured h2 {color: #008DB8; font-size: 1.714em; margin-bottom: 0.333em;}
+#featured h2 {color: #a30000; font-size: 1.714em; margin-bottom: 0.333em;}
 #featured h3 {font-size: 1.429em; margin-bottom: .5em;}
 
 #featured h3 a:link, #featured h3 a:visited {color: #000305; text-decoration: none;}
@@ -333,7 +333,7 @@ img.left, figure.left {float: left; margin: 0 2em 2em 0;}
 /*#extras li {border-bottom: 1px solid #fff;}*/
 #extras li {margin-top: 0;}
 #extras h2 {
-	color: #008db8;
+	color: #a30000;
 	font-size: 1.429em;
 	margin-bottom: .25em;
 	padding: 0 3px;
@@ -347,7 +347,7 @@ img.left, figure.left {float: left; margin: 0 2em 2em 0;}
 	padding: .3em .25em;
 }
 
-#extras a:hover, #extras a:active {background: #008db8; color: #fff;}
+#extras a:hover, #extras a:active {background: #a30000; color: #fff;}
 
 	/* Blogroll */
 	#extras .blogroll {
