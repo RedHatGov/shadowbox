@@ -1,0 +1,42 @@
+= Power
+:author: Jamie Duncan
+:date: 2016-10-20 11:32
+:modified: 2016-10-20 11:32
+:slug: power-system
+:summary: Power System Overview
+:category: systems
+
+== One cord. Just one cord.
+
+When designing Shadowbox, the goal was to keep the customer-facing experience as simple as possible. You cannot get simpler than plugging in a single 110V power cord and flipping a switch. To get that simple, you have to bring power into the box in a stable way so you can bring a single cord out.
+
+I didn't want to use a simple extension cord and power strip. It just doesn't feel robust, and it's also ugly. So we essentially created a fancy power strip.
+
+== 110V Power System
+=== Components
+
+All of these components (or their analogues) should be available at any Home Improvement warehouse.
+
+* link:http://www.homedepot.com/p/HDX-6-ft-16-3-SPT-3-Appliance-Cord-Gray-HD-588-547/100672804[110V Appliance Cord]
+* link:http://www.homedepot.com/p/Romex-15-ft-14-2-Soild-SIMpull-NM-B-Cable-28827426/202210510[14/2 Romex]
+* link:http://www.homedepot.com/p/Single-Gang-Drawn-Handy-Box-1-7-8-in-Deep-with-1-2-in-KO-s-8660/100560024?MERCH=REC-_-PIPHorizontal1_rr-_-202601776-_-100560024-_-N[Metal Gang Box - Qty. 3]
+* link:http://www.homedepot.com/p/3-8-in-Non-Metallic-NM-Twin-Screw-Cable-Clamp-Connectors-5-Pack-20511/100133208[Cable Clamps - Qty. 3]
+* link:http://www.homedepot.com/p/Leviton-1-Gang-Midway-Duplex-Outlet-Nylon-Wall-Plate-White-R62-00PJ8-00W/100356815[Outlet Cover - Qty. 2]
+* link:http://www.homedepot.com/p/Leviton-1-Gang-Toggle-Wall-Plate-White-R52-88001-00W/100014221[Switch Cover - Qty. 1]
+* link:http://www.homedepot.com/p/Leviton-15-Amp-Single-Pole-Switch-White-10-Pack-M24-01451-2WM/100075329[15-Amp light switch]
+* link:http://www.homedepot.com/p/Leviton-15-Amp-Duplex-Outlet-White-10-Pack-M24-05320-WMP/100055784[15-Amp Electrical switch - Qty. 2]
+* electrical tape, wire nuts, and cutters/pliers/screwdrivers for assembly
+
+== Assembly Notes
+
+This is Home Electrical 101. You switch the hot feed, and make sure you tape up all of your contacts (better safe than sorry). For the first revision, we used industrial velcro to attach the outlet to the top edge of the Pelican case and the switches to the bottom. It worked out well.
+
+Once we have 100V available inside the box, then we can power the networking gear as well as power the 12V system that will power the server nodes.
+
+In this pic, you can see it wired up, if not attached.
+
+image:/pictures/gallery/kingsmill/VZM.IMG_20161004_204454.jpg["110V Power Assembly",width=400,link="/pictures/gallery/kingsmill/VZM.IMG_20161004_204454.jpg"]
+
+== 12V Power system
+=== Components
+=== Assembly Notes
