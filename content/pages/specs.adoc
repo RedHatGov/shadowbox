@@ -8,7 +8,7 @@
 
 == It's all about what you can carry
 
-For field resources like Solutions Architects and Technical folks from the Red Hat BU, showing the world our solutions is all about what you can carry on to a sight.
+For field resources like Solutions Architects and Technical folks from the Red Hat BU, showing the world our solutions is all about what you can carry onsite.
 
 The Shadowbox is designed to be an ultra-portable server-grade demo/lab environment.
 
