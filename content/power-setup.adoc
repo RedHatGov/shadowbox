@@ -4,7 +4,8 @@
 :modified: 2016-10-20 11:32
 :slug: power-system
 :summary: Power System Overview
-:category: Systems
+:category: Subsystems
+:tags: power,subsystems
 
 == One cord. Just one cord.
 
@@ -39,5 +40,16 @@ In this pic, you can see it wired up, if not attached.
 image:/pictures/gallery/kingsmill/VZM.IMG_20161004_204454.jpg["110V Power Assembly",width=400,link="/pictures/gallery/kingsmill/VZM.IMG_20161004_204454.jpg"]
 
 == 12V Power system
+
 === Components
+
+All of these components can be sourced from the interwebs (links included).
+
+* link:http://www.gigampz.com/store/p23/Common_Slot_HP_DPS-1200FBA_1200_Watt_Server_Power_Supply.html[900W HP Power Supply]
+* link:http://www.gigampz.com/store/p19/Gigampz_CS_v2_Adapter_Board_%28DPS-1200FBA%2C_Common_Slot%2C_etc...%29.html[12V output adapter board]
+* link:https://www.amazon.com/PSU-120-120Watt-Supply-Mini-ITX-Mainboard/dp/B005TWE3O8[120W Pico PSU]
+* 18 gauge wire, shrink wrap, and soldering iron for custom-length power leads
+
 === Assembly Notes
+
+This is where a little of the innovation comes in. We are able to take a single server power supply and power all 8 nodes. Using the breakout board, we are able to wire up all of the Pico PSU's. This saves a ton of space and head inside the box.
