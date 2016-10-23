@@ -13,6 +13,7 @@ For field resources like Solutions Architects and Technical folks from the Red H
 The Shadowbox is designed to be an ultra-portable server-grade demo/lab environment.
 
 .Shadowbox Current Specs
+[frame="topbot"]
 |=========================================================
 | Nodes	           | 8
 | Motherboard	     | SUPERMICRO MBD-X10SLL-F-O uATX Server
