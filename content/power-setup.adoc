@@ -35,6 +35,7 @@ Once we have 100V available inside the box, then we can power the networking gea
 
 In this pic, you can see it wired up, if not attached.
 
+[.popup-gallery]
 image:/pictures/gallery/kingsmill/VZM.IMG_20161004_204454.jpg["110V Power Assembly",width=400,link="/pictures/gallery/kingsmill/VZM.IMG_20161004_204454.jpg"]
 
 == 12V Power system
