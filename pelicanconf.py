@@ -77,7 +77,9 @@ DISPLAY_CATEGORIES_ON_MENU = False
 DISPLAY_SEARCH_FORM = True
 
 # thumbnailer settings
-THUMBNAIL_DIR = 'thumbs'
+THUMBNAIL_DIR = 'pictures'
+THUMBNAIL_KEEP_NAME = True
+THUMBNAIL_KEEP_TREE = True
 
 # disqus_static settings
 DISQUS_SITENAME = 'localhost-8000-3'
