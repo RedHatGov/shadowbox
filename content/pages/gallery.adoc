@@ -2,7 +2,7 @@
 :author: Jamie Duncan
 :date: 2016-10-20 11:32
 :modified: 2016-10-20 11:32
-:slug: all-images
+:slug: gallery
 :summary: Shadowbox Pics
 :category: page
 :template: gallery
