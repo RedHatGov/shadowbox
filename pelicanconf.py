@@ -37,7 +37,7 @@ SOCIAL = (
     )
 
 PLUGIN_PATHS = ['pelican-plugins']
-PLUGINS = ['asciidoc_reader', 'sitemap', 'gravatar', 'filetime_from_git', 'gallery', 'thumbnailer', 'disqus_static']
+PLUGINS = ['asciidoc_reader', 'sitemap', 'gravatar', 'filetime_from_git', 'gallery', 'thumbnailer', 'disqus_static', 'pin_to_top']
 
 THEME = "pelican-theme"
 # Uncomment following line if you want document-relative URLs when developing

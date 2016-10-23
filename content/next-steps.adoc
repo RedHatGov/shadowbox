@@ -5,7 +5,8 @@
 :slug: summary
 :summary: What this site will be used for
 :category: Rev1
-:tags: rev1,thanksgiving,trello 
+:tags: rev1,thanksgiving,trello
+:pin: True
 
 == What's the Plan?
 
