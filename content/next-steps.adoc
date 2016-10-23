@@ -1,0 +1,26 @@
+= What Lives Here
+:author: Jamie Duncan
+:date: 2016-10-20 11:32
+:modified: 2016-10-20 11:32
+:slug: summary
+:summary: What this site will be used for
+:category: Overview
+:tags: shadowbox,project,overview
+
+== What's the Plan?
+
+Squeezing 8 servers worth of hardware into something a little bigger than a roller board takes planning. That is what this site is for.
+
+In addition to link:https://trello.com/b/KyamOxNo/shadowbox[Trello], we will use this repository to maintain design schematics, plan upgrades, and talk about the cool ways we figure out to use this piece of hardware.
+
+== Rev1 - The Thanksgiving release
+
+Rev0 came out in mid-October. The next release is planned to be completed and functional by Thanksgiving. Highlights include:
+
+* all 8 nodes functional
+* improved networking hardware from the Kingsmill version
+* documented processes
+* the beginnings of documented procedures
+* initial deployment playbooks
+
+So stay tuned, and feel free to help out!
