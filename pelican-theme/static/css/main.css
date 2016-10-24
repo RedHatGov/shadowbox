@@ -15,6 +15,12 @@
 @import url("typogrify.css");
 @import url(//fonts.googleapis.com/css?family=Yanone+Kaffeesatz&subset=latin);
 
+/* Shadowbox-specific styles */
+table .spec-table {
+  border: 1px solid;
+  border-collapse: collapse;  
+}
+
 /***** Global *****/
 /* Body */
 body {
