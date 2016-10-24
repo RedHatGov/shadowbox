@@ -8,6 +8,8 @@
 :tags: rev1,thanksgiving,trello
 :pin: True
 
+image::pictures/shadowbox-logo.png[]
+
 == What's the Plan?
 
 Squeezing 8 servers worth of hardware into something a little bigger than a roller board takes planning. That is what this site is for.
