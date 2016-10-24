@@ -15,15 +15,16 @@ The Shadowbox is designed to be an ultra-portable server-grade demo/lab environm
 .Shadowbox Current Specs
 [role="spec-table"]
 |=========================================================
-| Nodes	           | 8
-| Motherboard	     | SUPERMICRO MBD-X10SLL-F-O uATX Server
-| CPU	             | i3-4160 Dual-core hyperthreaded
-| RAM	             | 32GB DDR3
-| HDD	             | Samsung 850 256GB SSD
+| Nodes	           |  8
+| Motherboard	     |  link:https://www.supermicro.com/products/motherboard/Xeon/C220/X10SLL-F.cfm[SUPERMICRO MBD-X10SLL-F-O uATX Server]
+| CPU	             |  link:http://ark.intel.com/products/77488/Intel-Core-i3-4160-Processor-3M-Cache-3_60-GHz[i3-4160 Dual-core hyperthreaded]
+| RAM	             |  32GB DDR3
+| HDD	             |  link:http://www.samsung.com/us/computing/memory-storage/solid-state-drives/ssd-850-pro-2-5-sata-iii-256gb-mz-7ke256bw/[Samsung 850 256GB SSD]
 | Node Networking  |	2x 1Gbps NIC
 | IPMI             |	Dedicated LAN
-| Networking       |	Cisco WS-C4948-10GE-S 48-port
-| Power	           | 120W per node, 900W total
+| Networking       |	link:http://www.cisco.com/c/en/us/products/collateral/switches/catalyst-4948-10-gigabit-ethernet-switch/prod_bulletin0900aecd80246560.html[Cisco WS-C4948-10GE-S 48-port]
+| Power	           |  120W per node, 900W total
 | Wifi             |	Linksys 1200AC
-| Form Factor      |	Pelican Storm im2975
+| Form Factor      |	link:http://www.pelicancasesforless.com/p-11678-pelican-storm-im2975-case.aspx?gclid=CjwKEAjwv7HABRCSxfrjkJPnrWgSJAA45qA2UFY7VDxDhdtBr9w8sj0R3MiIjAarn6FYtiSXZpAqoRoC8M3w_wcB[Pelican Storm im2975]
+| Stickers         |  Too Many To Count
 |==========================================================
