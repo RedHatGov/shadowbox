@@ -6,9 +6,6 @@
 :summary: What this site will be used for
 :category: Rev1
 :tags: rev1,thanksgiving,trello
-:pin: True
-
-image::pictures/shadowbox-logo.png[]
 
 == What's the Plan?
 

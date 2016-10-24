@@ -1,0 +1,19 @@
+= Introduction
+:author: Jamie Duncan
+:date: 2016-10-20 11:32
+:modified: 2016-10-20 11:32
+:slug: what-is-shadowbox
+:summary: Introducing the Shadowbox Concept
+:category: Rev0
+:tags: rev0,about,intro
+:pin: True
+
+image::pictures/shadowbox-logo.png[]
+
+== What is Shadowbox?
+
+Shadowbox is a new way to think about portable enterprise-grade labs and demonstrations. It is a fully portable (weighs less than 60 pounds), enterprise-grade platform that can run complex solutions-oriented demonstrations and labs.
+
+== What is this Site for?
+
+This site will maintain all of the documentation around the Shadowbox efforts. Material lists, Assembly Notes, and examples of when it's used will all live here. It will also provide a central area to link up all of the various tools that are required to make something this complex work well.
