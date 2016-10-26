@@ -5,7 +5,7 @@
 :slug: what-is-shadowbox
 :summary: Introducing the Shadowbox Concept
 :category: Rev0
-:tags: rev0,about,intro
+:tags: about,intro
 :pin: True
 
 image::pictures/shadowbox-logo.png[]
