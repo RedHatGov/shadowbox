@@ -4,7 +4,7 @@
 :modified: 2016-10-20 11:32
 :slug: rev-1-highlights
 :summary: A walk through Rev 1 and what it will have going for it
-:category: overview
+:category: rev1
 :tags: rev1,overview,builds
 
 It's time to start working on Revision 1 of Shadowbox! Rev 0 was a lot of fun and showed a lot of people the value it has to offer.
