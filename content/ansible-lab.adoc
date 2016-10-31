@@ -1,0 +1,450 @@
+:badges:
+:icons:
+:toc-title: Agenda
+:toc2: left
+:iconsdir: http://people.redhat.com/~jduncan/images/icons
+:imagesdir: https://s3.amazonaws.com/ansible-lab-images
+:event-date: 27-Oct-2016
+:location: San Diego, CA
+:tower_url: https://ansible-lab.rhshadowbox.com
+:toclevels: 3
+:source-highlighter: highlight.js
+= Automation for Everyone
+{location} : {event-date}
+
+.Before We Get Started
+****
+[.lead]
+Overview
+
+Today is meant for anyone who has any exposure to Ansible, whether you have used it or not. We are going to start with a short overview (yes, slideware) and then we'll get into the lab as soon as possible. That is where we will spend most of our time.
+
+[.lead]
+Your Responsibilities
+
+* Have a discussion. This will be boring if it's just us up here talking for over 2 hours.
+* Participate. We are going to cut you loose in a live Ansible Tower instance here in just a little while. Have questions. Have opinions.
+
+Hopefully you have your laptop with you. If not, please find a shoulder-surfing buddy. See? Not only can we dig into Ansible but you can make a new friend!
+
+[IMPORTANT]
+.WiFi Access
+====
+ssid: `Red Hat Guest`
+
+password: `atomic2016`
+====
+****
+
+
+.Today's Team
+****
+[.lead]
+Tyler Cross - Ansible Solutions Architect
+
+[.lead]
+Jamie Duncan - Cloud Solutions Architect
+
+Jamie has been at Red Hat for about 5 years and works with all things cloudy. He lives in Central Virginia on a soon-to-be farm when he's not on the road talking about OpenStack or Containers or Ansible or something else cloudy.
+
+[.lead]
+Bill Hirsch - Solutions Architect
+
+Bill joined Red Hat earlier this year as an account architect focused on all things Red Hat. He joins us as a former customer where he specialized in Linux/Unix, automation, and monitoring. He lives in Pittsburgh with his wife, three boys, and too many pets.
+
+****
+== Document Copyright
+
+This document was created by and for Red Hat, Inc. It is being released under link:https://creativecommons.org/licenses/by/4.0/[Creative Commons License 4.0]. You are free to re-use it in whole or in part.
+
+You must give appropriate credit, provide a link to the license, and indicate if changes were made. You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use.
+
+== Installing Ansible Tower
+image::ansible_tower_logo.png[Ansible]
+=== Infrastructure
+
+For this lab, we will be using Ansible Tower 3.0.2, which is the latest production release. We are running it in an link:https://aws.amazon.com/ec2/instance-types/[`m4.xlarge`] AWS instance.
+
+[NOTE]
+.We know this is resource overkill
+====
+But we'll only be running this for a few days and our bosses are paying the bill. :)
+====
+
+=== Setup
+
+This lab is NOT a walkthrough of Ansible Tower's setup. To be honest, it's too simple.
+
+* get a system of correct size
+* register it with Red Hat
+* subscribe it to the proper channels
+* download a tarball containing the Ansible setup scripts
+* fill a few variables out in an inventory file
+* run `setup.sh`
+
+`setup.sh` just calls a playbook that deploys Ansible Tower. Total setup for this lab took approximately 45 minutes, end-to-end.
+
+=== End Result
+
+The Ansible Tower we set up for this lab is at {tower_url}
+
+=== First Login
+
+You know you were successful if you are able to browse to your Tower's hostname and get some like
+
+image::figure1.png[title="Ansible Tower Login Screen"]
+
+To log in, you use the admin password you set in your inventory file. It's just that easy!
+
+== The Tower UI
+
+In order to save a fair amount of time during this lab we have built out several of the constructs that Tower uses to organize itself into a enterprise, multi-tenant deployment tool. Instead of doing those live, we will walk through them quickly here so we can get to the good stuff sooner.
+
+=== Settings
+
+The `settings` menu (the little gear in the top right corner) is where you do a lot of your initial work to configure Ansible Tower. Within it are 8 options (9 if you include 'About')
+
+We won't need to cover them all, but a few are key for us to be able to effectively use Tower today.
+
+. Settings Options
+* Organizations - Create Logical Organizations within Tower
+* Users - Manage Users, including their permissions
+* Teams - Create and manage Teams
+* Credentials - Manage multiple types of credentials (more on that later)
+* Management Jobs - cleaning up the Tower Database
+* Inventory Scripts - Maintain dynamic inventory from your various cloud providers
+* Notifications - Manage various kinds of notifications like Email, SMS, and Slack
+* View your License Info
+* About Tower
+
+==== Organizations
+
+We will need to create a new Organization for our Lab today.
+
+image::figure2.png[title="Creating a new Organization"]
+
+==== Teams
+
+We will need to create a new Team for our Lab today as well.
+
+image::figure3.png[title="Creating a New Team"]
+
+[IMPORTANT]
+Be sure to add your new Team to your new Organization!
+
+==== Notifications
+
+Here is where we can have a little bit of fun. We've created a Slack Team, https://redhat-ansible-lab.slack.com , that everyone here is free to join today. We are going to hook it into Ansible Tower today so we can get important notifications.
+
+This process is link:https://docs.ansible.com/ansible-tower/latest/html/userguide/notifications.html#slack[documented in the Tower 3.0.1 User Guide]. It involves creating a bot in Slack and hooking his API Key into Tower. It takes about 10 minutes.
+
+image::figure4.png[title="Attaching our Slack bot to Ansible Tower"]
+
+==== Credentials
+
+Credentials are what Ansible Tower uses to connect our automation to everything else. For our lab today we are going to set up 2 kinds of credentials.
+
+===== AWS Credentials
+
+Since this lab is in AWS we need to tell Ansible Tower how to connect. For this we create an AWS Credential. For the AWS information we create a user in IAM and give him the needed permissions. That information is available in the link:https://aws.amazon.com/iam/faqs/[IAM Documentation].
+
+image::figure5.png[title="Creating an AWS Credential"]
+
+===== Machine Credentials
+
+Ansible uses ssh as the transport method. With that in mind, we need to give Ansible Tower the same ssh key(s) that AWS sets up on the system via cloud-init when it is provisioned.
+
+image::figure6.png[title="Creating a Machine Credential"]
+
+[IMPORTANT]
+.Don't forget about the Permissions!
+====
+Every artifact (Credentials, Job Templates, etc.) in Ansible Tower has associated permissions. Be sure to associate them with the correct users and teams so they can see and use/admin them as needed when they log in!
+
+image::figure7.png[title="Adding Team Permissions"]
+====
+
+==== Last Word About Settings
+
+When you have all of the information handy, like your SSH keys, Slack API Token, etc. the above works takes around 15-20 minutes to configure.
+
+This can all also happen through the API or the command line using tower-cli on the Tower server or a remote server connecting back to the Tower server.
+
+[source]
+----
+[ec2-user@ip-172-31-48-160 ~]$ tower-cli team list
+== ======== ============
+id   name   organization
+== ======== ============
+ 1 Lab Team            2
+== ======== ============
+----
+
+=== Projects
+
+Projects link your version-controlled playbooks to Ansible Tower. The importance of this concept can't be overstated. Ansible Tower is a tool to make your Ansible Playbooks more scaleable in your enterprise. But you are still writing playbooks just like you would with Ansible core.
+
+[TIP]
+While you do write them just like you would with using Ansible core, Tower can make your life easier. We'll point that out along the way in a few places.
+
+image::figure8.png[title="Creating a New Project"]
+
+==== Lab Playbooks Source Code
+
+The playbooks we will use for all of today's lab are available in a link:https://github.com/bhirsch70/Ansible[public Github repository]. So you can pull them down, replicate this lab, and expand on them as you see fit.
+
+[IMPORTANT]
+As always, pull requests are welcome!
+
+=== Inventories
+
+In Ansible Tower, inventories are how you track and group your systems so you can act on them. Our inventory for this lab will be coming from AWS, so we will need to configure Ansible Tower to look for our systems in AWS.
+
+image::figure9.png[title="Creating a new Inventory"]
+
+==== Groups
+
+Once an Inventory is created, you are presented with a Group and Hosts screen. For AWS, we want to create a group that will dynamically go out to a given region of AWS (us-west-2 in our case today) and use our Cloud Credential to log in to AWS to pull down information about all of our hosts.
+
+If you were managing inventories around your own datacenter you may want to create hosts individually depending on your source of Inventory. Ansible Tower has many options including CloudForms and Satellite that can be used as data sources.
+
+image::figure10.png[title="Creating an AWS Group"]
+
+==== Syncing Cloud Provider Groups
+
+Once our AWS Group was created, we click on the `Start Sync Process` icon on the Inventories screen. This will go out to AWS to pull down updated information. Once that is done we will have hosts populated in that section for our EC2 Inventory.
+
+image::figure11.png[title="Populated EC2 Hosts"]
+
+==== Scheduling Group Syncs
+
+You can also schedule regular sync processes from the Inventories screen. This is good when you have a dynamic cloud environment.
+
+image::figure12.png[title="Scheduling EC2 Group Updates"]
+
+=== Job Templates
+
+This is where the rubber meets the road. A job template combines all of the things we just set up
+
+* machine credentials
+* cloud credentials
+* playbooks from your project's source SCM
+* inventories
+
+and puts them all together to provide a platform for effectively managing your infrastructure. Job Templates also have the ability to limit which hosts are acted on in multiple ways and configure all of the 'normal' Ansible things like whether or not a job is run with privilege escalation.
+
+image::figure13.png[title="Creating a Job Template"]
+
+
+== Exercise One - Creating EC2 Instances
+
+[IMPORTANT]
+Be sure you can log in to {tower_url}. The email you used to register for this workshop should be your username and the password will be shown as part of the lab. If you can't log in start shouting loud and waving your hands!
+
+Now that everyone can log into Ansible Tower (right?!), everyone will be able to create a few EC2 instances to use during our following labs. You should be able to see a job template called `Provision EC2 Instances`. Click the `launch` button next to it in the `Job Templates` screen.
+
+[TIP]
+Can you see the job we used to create all of the user accounts?
+
+You will be prompted for a survey when you launch a Job based on this Job Template.
+
+=== Playbook Tags
+
+If you look at the link:https://github.com/bhirsch70/Ansible/blob/master/provision_ec2/roles/ec2_common/tasks/main.yml[playbook role that is being called], you will notice that the tasks have tags associated with them.
+
+[source]
+----
+...
+- name: Wait for SSH to come up
+  local_action: wait_for host={{ item.public_dns_name }} port=22 delay=60 timeout=320 state=started
+  with_items: "{{ ec2.instances }}"
+  tags:
+    - provision # <1>
+
+- name: gather ec2 facts
+  action: ec2_facts
+  tags:
+    - terminate # <2>
+...
+----
+<1> provision tag
+<2> terminate tag
+
+The tags can be referenced in a playbook to limit which tasks in a role are called. It allows you to selectively run parts of roles without lots of messy logic. They are link:http://docs.ansible.com/ansible/playbooks_tags.html[fully documented].
+
+Inside a Job Template, you can use tags as well. In our EC2 Provisioning Job Template, we are only running tasks in the role that have a `provision` tag.
+
+image::figure16.png[title="Limiting Roles with Tags"]
+
+[TIP]
+Job Templates can also prompt for Playbook Tags at launch. Even more ways to be dynamic and not have to repeat yourself!
+
+== Exercise Two - Working with Inventories
+
+[IMPORTANT]
+If you are having trouble creating an instance or two, shout loud and start waving your hands!
+
+=== Creating Amazon Tags
+
+Now that we all have our own vm's created, let's do some work with them. First off, we need a way to distinguish your systems from the other lab systems that we just created. Luckily, we've already thought of that for us.
+
+Each instance that was created in EC2 had two tags attached to it as well. The first, `ansible_lab`, is the same for everyone. It allows us to easily find and remove these test instances at the end of our lab today. After all, EC2 is cheap, but it ain't free. :)
+
+The second tag is called `user_id`, and is set to the value that you set when you ran you EC2 Creation Job.
+
+The relevant part of the task is
+
+[source]
+----
+  ec2:
+...
+    instance_tags:
+      ansible_lab: true
+      user_id: "{{ user_tag }}"
+----
+
+image::figure17.png[title="Amazon Tagging that was created by our Job"]
+
+=== Leveraging Amazon Tags in Tower
+
+After we created our instances we updated our EC2 Inventory. As part of this update, Tower pulled in all of the tags that are in EC2 and correlated them back to our Inventory. For each unique tag value, Tower auto-creates a group that we can leverage. You can access these groups through your Inventory.
+
+They are created with the taxonomy:
+
+`tag_tagname_tagvalue`
+
+For example, for our `user_id` tag, when I used `jduncan` as the value in my Job Template, Tower created the tag `tag_user_id_jduncan`.
+
+In the Inventories page, I can select these tag groups and do work on them as a whole.
+
+image::figure18.png[title="Using Amazon Tags to Create Dynamic Groups in Ansible Tower"]
+
+== Exercise Three - Working with Inventory Groups
+
+For our example, I created 2 EC2 instances with the `user_id` value of bsmith (we'll call him Billy). You can see his Inventory Group in Figure 18 above. Let's make sure his systems are up and available. We can do this with his Inventory Group. For this exercise, do the same thing with your inventory group.
+
+[TIP]
+For this lab substitute your own Inventory Group for `tag_user_id_bsmith`.
+
+In the Inventories page, select the `tag_user_id_bsmith` group and click the `RUN COMMANDS` button that became available when you selected the group.
+
+In the new dialog box that opens up, select the 'Ping' module and use our `ansible-lab-instances` Machine Credential.
+
+image::figure19.png[title="Running an Arbitrary Command using an Inventory Group"]
+
+Next, click the `Launch` button.
+
+If all goes well, we will get a pong back from all of your systems.
+
+image::figure20.png[title="Successful Pongs from our Inventory Group"]
+
+With a few mouse clicks, we can run powerful arbitrary commands on any subset of our infrastructure. Pretty Awesome!
+
+[TIP]
+You can, of course, select multiple groups, or individual hosts, before launching your Commands.
+
+== Exercise Four - Creating a Job Template
+
+At this point, we can confidently navigate and we have gone through (almost) all of the major concepts in Ansible Tower. The final scripted exercise we have scheduled for today is going through the process around creating a Job Template.
+
+Like we talked about earlier, a Job Template takes all of the other components that are tracked in Ansible Tower and brings them together to do actual work. To do a job.
+
+It's usually pretty straightforward.
+
+The thing that you have to do, though, is account for ALL of the variables that your playbook needs. These either have to be account for in:
+
+* your playbook role itself (in the code)
+* in your Job Templates `Extra Variables` field
+* in your Job Templates as a Survey
+
+For this exercise, we will create a Job Template that will create local users on a given system. First, let's look at our playbook. For this we will be using link:https://github.com/bhirsch70/Ansible/tree/master/rhel_host_config[`rhel_host_config`] section in our GitHub repo.
+
+.playbook
+[source]
+----
+---
+- name: setup rhel VM
+  hosts: all
+  gather_facts: no
+  become: true
+
+  roles:
+    - host_common
+----
+
+.host_common role tasks
+[source]
+----
+---
+- name: Add or remove user account
+  user:
+    name: "{{ item.name }}"
+    group: users
+    home: /home/{{ item.name }}
+    password: "$6$rounds=656000$3s/q6j43TVMvo82J$CSZt.mYCTFADfParJDxYeiOM/AlovGpc1idDtehmpau6zQ94CBrMfuxaNyXhdk/t.kpgOOTw.9sueGrRttJrL0"
+    state: "{{ user_state }}"
+    remove: yes
+  with_items:
+    - "{{ users }}"
+  tags:
+    - users
+
+- name: Force user with default password to change password at next login
+  command: chage -d 0 {{ item.name }}
+  when: user_state == "present"
+  with_items:
+    - "{{ users }}"
+  tags:
+    - users
+
+- name: Add or remove yum packages
+  package:
+    name: "{{ item }}"
+    state: "{{ package_state }}"
+    use: yum
+  with_items:
+    - "{{ package_list }}"
+  tags:
+    - packages
+
+- name: create the /etc/motd file
+  template:
+    src: motd.j2
+    dest: /etc/motd
+    owner: root
+    group: root
+    mode: 0644
+  tags:
+    - motd
+----
+
+As we can see, the playbook calls the host_common role, and that role has several tasks that can be put together or seperated by their tags.
+
+For this example exercise, we will create a job template that will add system users to our systems that will let us log in. Looking at the tasks with a `user` tag, we need to account for a few variables:
+
+* users - a dictionary of users with a name value
+* user_password - a password (encrypted)
+* user_state - to feed into the ansible task. There are a few valid options here.
+
+We will create a simple survey to handle all of this, along with prompting for our `Extra Variables` in the Job Template so we can dynamically create users for a given system or group of systems.
+
+image::figure21.png[title="Creating a Job Template to Add Users"]
+
+[TIP]
+.A Few Important Items
+====
+* We don't need Cloud Credentials since we are ssh-ing directly into the system to make changes
+* Notice the `Job Tags` field is referencing the `users` tag that is defined in the role. This way this Job will only execute those tasks.
+====
+
+image::figure22.png[title="Creating a Job Template Survey"]
+
+== Wrap Up, Q&A, and Free Style
+
+That wraps up what we have planned for today.
+
+What do you think? How can we help you understand Ansible Tower better?
+
+Thank you for your time and participation!
+
+image::redhatlogo.png[]

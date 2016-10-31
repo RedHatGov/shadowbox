@@ -1,0 +1,27 @@
+= Revision One Highlights
+:author: Jamie Duncan
+:date: 2016-10-20 11:32
+:modified: 2016-10-20 11:32
+:slug: rev-1-highlights
+:summary: A walk through Rev 1 and what it will have going for it
+:category: overview
+:tags: rev1,overview,builds
+
+It's time to start working on Revision 1 of Shadowbox! Rev 0 was a lot of fun and showed a lot of people the value it has to offer.
+All of the Rev1 tasks are tracked on link:https://trello.com/b/KyamOxNo/shadowbox?menu=filter&filter=label:rev1[Trello].
+
+== Physical Build Out
+
+* powering up all 8 nodes
+* using a smarter method to space the boards (h/t link:http://twitter.com/dsirrine[Dave Sirrine] for the idea)
+* moving to a beefier networking backbone
+* configuring the control plane (Satellite 6, IPA, and Ansible Tower to start)
+* better shock-mounting of all hardware
+* configuring access from outside the Shadowbox network
+* adding a Raspberry Pi to handle DNS/DHCP
+
+The hardware has been ordered, and a trip to Home Depot should happen in short order. This will also be the first revision to make it look like something that could be consumed by someone other than a crazy SA. We hope so, at least...
+
+== Initial Workshops
+
+Once we have the physical set up ironed out, we will start working on the initial automated workshops that Shadowbox will power. Those will be handled by other posts, but I will say that Shadowbox is hoping to make his first road trip before Thanksgiving!
