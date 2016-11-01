@@ -137,7 +137,7 @@ table {margin: .5em auto 1.5em auto; width: 98%;}
     background-color: #f5f5f5;
   }
 
- table.grid-all {
+ table.grid-all tr td {
    border-collapse: collapse;
    border: 1px solid;
    border-color: black;
