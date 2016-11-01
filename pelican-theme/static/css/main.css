@@ -143,6 +143,10 @@ table {margin: .5em auto 1.5em auto; width: 98%;}
    border-color: black;
  }
 
+ table.grid-all tr:hover {
+   background-color: #f5f5f5;
+ }
+
 /* HTML5 tags */
 header, section, footer,
 aside, nav, article, figure {
