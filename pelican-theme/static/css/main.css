@@ -123,7 +123,11 @@ table {margin: .5em auto 1.5em auto; width: 98%;}
 
 	/* Tbody */
   tbody tr:hover { background-color: #f5f5f5; }
-	tbody td {}
+	tbody td {
+    text-align: center;
+    vertical-align: center;
+    padding: 5px;
+  }
 	tbody th {
     text-align: center;
     vertical-align: center;
@@ -137,9 +141,7 @@ table {margin: .5em auto 1.5em auto; width: 98%;}
 	tfoot th {}
 	tfoot td {}
 
-  tr:hover {
-    background-color: #f5f5f5;
-  }
+
 
  table, th, tr, td {
    border-collapse: collapse;
@@ -147,6 +149,20 @@ table {margin: .5em auto 1.5em auto; width: 98%;}
    border-color: black;
  }
 
+ th {
+    text-align: center;
+    vertical-align: center;
+    padding: 5px;
+ }
+
+ td {
+   text-align: center;
+   vertical-align: center;
+   padding: 5px;
+ }
+
+ tr:nth-child(even) {background-color: #f2f2f2}
+ tr:hover { background-color: #f5f5f5}
 /* HTML5 tags */
 header, section, footer,
 aside, nav, article, figure {
