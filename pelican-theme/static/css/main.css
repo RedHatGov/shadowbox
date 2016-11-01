@@ -119,7 +119,7 @@ table {margin: .5em auto 1.5em auto; width: 98%;}
 	thead td {}
 
 	/* Tbody */
-	tbody td {padding: .5em .4em;}
+	tbody td {}
 	tbody th {}
 
 	tbody .alt td {}
@@ -130,14 +130,15 @@ table {margin: .5em auto 1.5em auto; width: 98%;}
 	tfoot td {}
 
   tr:hover {
-      background-color: #f5f5f5;
-    }
+    background-color: #f5f5f5;
+  }
 
 /* HTML5 tags */
 header, section, footer,
 aside, nav, article, figure {
 	display: block;
 }
+
 
 /***** Layout *****/
 .body {clear: both; margin: 0 auto; width: 800px;}
