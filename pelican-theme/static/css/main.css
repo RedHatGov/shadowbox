@@ -16,8 +16,13 @@
 @import url(//fonts.googleapis.com/css?family=Yanone+Kaffeesatz&subset=latin);
 
 /* Shadowbox-specific styles */
-table.spec-table tr:hover {
+table.spec-table td:hover {
   background-color: #f5f5f5;
+}
+
+table.spec-table tr td {
+  border: 1px solid #fff;
+  border-collapse: collapse;
 }
 
 /***** Global *****/

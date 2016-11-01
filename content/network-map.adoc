@@ -2,7 +2,7 @@
 :author: Jamie Duncan
 :date: 2016-10-20 11:32
 :modified: 2016-10-20 11:32
-:slug: rev1-network-config
+:slug: network-config
 :summary: The Rev1 Shadowbox Network Configuration
 :category: rev1
 :tags: network,config
