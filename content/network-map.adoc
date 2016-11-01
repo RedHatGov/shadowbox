@@ -12,7 +12,7 @@
 At the end of the day, the link:http://www.cisco.com/c/en/us/products/collateral/switches/catalyst-4948-10-gigabit-ethernet-switch/prod_bulletin0900aecd80246560.html[switch] that is the backbone of the Shadowbox network will run multiple configurations, depending on the demo. This document will illustrate the physical wiring that will remain constant. We can then leverage this to build out multiple configurations for OpenStack, OpenShift, or any product combination we see fit to deploy.
 
 .Shadowbox Port Assignments
-[options="header"]
+[options="header",halign="center"]
 |=========================================================
 | Port    |     Connection
 | 1       |     Linksys AC1900 AC Wifi Router/Access Point (default gateway)
