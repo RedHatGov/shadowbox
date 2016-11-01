@@ -1,0 +1,66 @@
+= Network Configuration
+:author: Jamie Duncan
+:date: 2016-10-20 11:32
+:modified: 2016-10-20 11:32
+:slug: rev1-network-config
+:summary: The Rev1 Shadowbox Network Configuration
+:category: rev1
+:tags: network,config
+
+== Network Concepts
+
+At the end of the day, the link:http://www.cisco.com/c/en/us/products/collateral/switches/catalyst-4948-10-gigabit-ethernet-switch/prod_bulletin0900aecd80246560.html[switch] that is the backbone of the Shadowbox network will run multiple configurations, depending on the demo. This document will illustrate the physical wiring that will remain constant. We can then leverage this to build out multiple configurations for OpenStack, OpenShift, or any product combination we see fit to deploy.
+
+.Shadowbox Port Assignments
+[role="spec-table"]
+|=========================================================
+| Port    |     Connection
+| 1       |     Linksys AC1900 AC Wifi Router/Access Point (default gateway)
+| 2       |     Raspberry Pi 3 for DNS/DHCP
+| 3       |     Node 0 IPMI
+| 4       |     Node 1 IPMI
+| 5       |     Node 2 IPMI
+| 6       |     Node 3 IPMI
+| 7       |     Node 4 IPMI
+| 8       |     Node 5 IPMI
+| 9       |     Node 6 IPMI
+| 10      |     Node 7 IPMI
+| 11      |     Node 8 IPMI
+| 12      |     Node 0 NIC 0
+| 13      |     Node 0 NIC 1
+| 14      |     Node 1 NIC 0
+| 15      |     Node 1 NIC 1
+| 16      |     Node 2 NIC 0
+| 17      |     Node 2 NIC 1
+| 18      |     Node 3 NIC 0
+| 19      |     Node 3 NIC 1
+| 20      |     Node 4 NIC 0
+| 21      |     Node 4 NIC 1
+| 22      |     Node 5 NIC 0
+| 23      |     Node 5 NIC 1
+| 24      |     Node 6 NIC 0
+| 25      |     Node 6 NIC 1
+| 26      |     Node 7 NIC 0
+| 27      |     Node 7 NIC 1
+| 28      |     Node 8 NIC 0
+| 29      |     Node 8 NIC 1
+| 30      |     Open
+| 31      |     Open
+| 32      |     Open
+| 33      |     Open
+| 34      |     Open
+| 35      |     Open
+| 36      |     Open
+| 37      |     Open
+| 38      |     Open
+| 39      |     Open
+| 40      |     Open
+| 42      |     Open
+| 41      |     Open
+| 43      |     Open
+| 44      |     Open
+| 45      |     Open
+| 46      |     Open
+| 47      |     Hardwire Uplink
+| 48      |     Hardwire Uplink
+|=========================================================
