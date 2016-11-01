@@ -476,11 +476,11 @@ li:last-child .hentry, #content > .hentry {border: 0; margin: 0;}
 	#add-comment * {margin-bottom: .5em;}
 
   /* Shadowbox-specific styles */
-  table.spec-table td:hover {
+  .spec-table tr:hover {
     background-color: #f5f5f5;
   }
 
-  table.spec-table tr td {
+  .spec-table tr td {
     border: 1px solid #fff;
     border-collapse: collapse;
   }
