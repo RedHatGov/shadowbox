@@ -115,7 +115,10 @@ div.note {
 table {margin: .5em auto 1.5em auto; width: 98%;}
 
 	/* Thead */
-	thead th {padding: .5em .4em; text-align: left;}
+	thead th {padding: .5em .4em;
+    text-align: center;
+    background-color: #f5f5f5;
+  }
 	thead td {}
 
 	/* Tbody */
