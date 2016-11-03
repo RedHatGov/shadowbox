@@ -21,6 +21,8 @@ At the end of the day, the link:http://www.cisco.com/c/en/us/products/collateral
 | 902     | 192.168.102.0/24  | Storage Management
 | 903     | 192.168.103.0/24  | Tenant
 | 904     | 192.168.104.0/24  | External
+|=========================================================
+
 
 .Shadowbox Port Assignments
 [options="header",halign="center"]
