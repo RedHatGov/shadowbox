@@ -1,0 +1,14 @@
+= Raspberry Pi Configuration
+:author: Jamie Duncan
+:date: 2016-10-20 11:32
+:modified: 2016-10-20 11:32
+:slug: raspberry-pi
+:summary: The Rev1 Shadowbox Raspberry Pi Configuration
+:category: rev1
+:tags: raspberry-pi,config
+
+== Why Use a Raspberry Pi?
+
+== Operating System
+
+== Utilities

@@ -1,0 +1,16 @@
+= OpenStack Configuration
+:author: Jamie Duncan
+:date: 2016-10-20 11:32
+:modified: 2016-10-20 11:32
+:slug: openstack-config
+:summary: The Rev1 Shadowbox OpenStack Configuration
+:category: rev1
+:tags: openstack,config
+
+== Networking Configuration
+
+== Undercloud
+
+
+
+== IPMI Configuration

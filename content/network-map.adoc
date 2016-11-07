@@ -27,53 +27,52 @@ At the end of the day, the link:http://www.cisco.com/c/en/us/products/collateral
 .Shadowbox Port Assignments
 [options="header",halign="center"]
 |=========================================================
-| Port    |     Connection                                                    | IP              | VLANs
+| Port    |     Connection                                                    | IP              | VLANs       | MAC
 | 1       |     Linksys AC1900 AC Wifi Router/Access Point (default gateway)  | 192.168.1.1     | 1
 | 2       |     Raspberry Pi 3 for DNS/DHCP                                   | 192.168.1.2     | 1
-| 3       |     Node 0 IPMI                                                   | 192.168.1.10    | 1
-| 4       |     Node 1 IPMI                                                   | 192.168.1.11    | 1
-| 5       |     Node 2 IPMI                                                   | 192.168.1.12    | 1
-| 6       |     Node 3 IPMI                                                   | 192.168.1.13    | 1
-| 7       |     Node 4 IPMI                                                   | 192.168.1.14    | 1
-| 8       |     Node 5 IPMI                                                   | 192.168.1.15    | 1
-| 9       |     Node 6 IPMI                                                   | 192.168.1.16    | 1
-| 10      |     Node 7 IPMI                                                   | 192.168.1.17    | 1
-| 11      |     Node 8 IPMI                                                   | 192.168.1.18    | 1
-| 12      |     Node 0 NIC 0                                                  | 192.168.1.20    | 1,900-904
-| 13      |     Node 0 NIC 1                                                  | LACP with NIC 0 |
-| 14      |     Node 1 NIC 0                                                  | 192.168.1.21    | 1,900-904
-| 15      |     Node 1 NIC 1                                                  | LACP with NIC 0 |
-| 16      |     Node 2 NIC 0                                                  | 192.168.1.22    | 1,900-904
-| 17      |     Node 2 NIC 1                                                  | LACP with NIC 0 |
-| 18      |     Node 3 NIC 0                                                  | 192.168.1.23    | 1,900-904
-| 19      |     Node 3 NIC 1                                                  | LACP with NIC 0 |
-| 20      |     Node 4 NIC 0                                                  | 192.168.1.24    | 1,900-904
-| 21      |     Node 4 NIC 1                                                  | LACP with NIC 0 |
-| 22      |     Node 5 NIC 0                                                  | 192.168.1.25    | 1,900-904
-| 23      |     Node 5 NIC 1                                                  | LACP with NIC 0 |
-| 24      |     Node 6 NIC 0                                                  | 192.168.1.26    | 1,900-904
-| 25      |     Node 6 NIC 1                                                  | LACP with NIC 0 |
-| 26      |     Node 7 NIC 0                                                  | 192.168.1.27    | 1,900-904
-| 27      |     Node 7 NIC 1                                                  | LACP with NIC 0 |
-| 28      |     Node 8 NIC 0                                                  | 192.168.1.28    | 1,900-904
-| 29      |     Node 8 NIC 1                                                  | LACP with NIC 0 |
-| 30      |     Open                                                          ||
-| 31      |     Open ||
-| 32      |     Open ||
-| 33      |     Open ||
-| 34      |     Open ||
-| 35      |     Open ||
-| 36      |     Open ||
-| 37      |     Open ||
-| 38      |     Open ||
-| 39      |     Open ||
-| 40      |     Open ||
-| 42      |     Open ||
-| 41      |     Open ||
-| 43      |     Open ||
-| 44      |     Open ||
-| 45      |     Open ||
-| 46      |     Open ||
-| 47      |     Hardwire Uplink for testing || 1
-| 48      |     Hardwire Uplink for testing || 1
+| 3       |     Node 0 IPMI                                                   | 192.168.1.20    | 1           | 0C:C4:7A:C7:7B:EB
+| 4       |     Node 1 IPMI                                                   | 192.168.1.21    | 1           | 0C:C4:7A:90:DA:32
+| 5       |     Node 2 IPMI                                                   | 192.168.1.22    | 1           | 0C:C4:7A:CF:82:80
+| 6       |     Node 3 IPMI                                                   | 192.168.1.23    | 1           | 0C:C4:7A:91:40:16
+| 7       |     Node 4 IPMI                                                   | 192.168.1.24    | 1           | 0C:C4:7A:90:5C:ED
+| 8       |     Node 5 IPMI                                                   | 192.168.1.25    | 1           | 0C:C4:7A:CF:2C:19
+| 9       |     Node 6 IPMI                                                   | 192.168.1.26    | 1           | 0C:C4:7A:90:5C:CE
+| 10      |     Node 7 IPMI                                                   | 192.168.1.27    | 1           | 0C:C4:7A:90:DA:B1
+| 12      |     Node 0 NIC 0                                                  | 192.168.1.20    | 1,900-904   |
+| 13      |     Node 0 NIC 1                                                  | LACP with NIC 0 |             |
+| 14      |     Node 1 NIC 0                                                  | 192.168.1.21    | 1,900-904   |
+| 15      |     Node 1 NIC 1                                                  | LACP with NIC 0 |             |
+| 16      |     Node 2 NIC 0                                                  | 192.168.1.22    | 1,900-904   |
+| 17      |     Node 2 NIC 1                                                  | LACP with NIC 0 |             |
+| 18      |     Node 3 NIC 0                                                  | 192.168.1.23    | 1,900-904   |
+| 19      |     Node 3 NIC 1                                                  | LACP with NIC 0 |   |
+| 20      |     Node 4 NIC 0                                                  | 192.168.1.24    | 1,900-904   |
+| 21      |     Node 4 NIC 1                                                  | LACP with NIC 0 |   |
+| 22      |     Node 5 NIC 0                                                  | 192.168.1.25    | 1,900-904   |
+| 23      |     Node 5 NIC 1                                                  | LACP with NIC 0 |   |
+| 24      |     Node 6 NIC 0                                                  | 192.168.1.26    | 1,900-904   |
+| 25      |     Node 6 NIC 1                                                  | LACP with NIC 0 |   |
+| 26      |     Node 7 NIC 0                                                  | 192.168.1.27    | 1,900-904   |
+| 27      |     Node 7 NIC 1                                                  | LACP with NIC 0 |   |
+| 28      |     Node 8 NIC 0                                                  | 192.168.1.28    | 1,900-904   |
+| 29      |     Node 8 NIC 1                                                  | LACP with NIC 0 |   |
+| 30      |     Open                                                          ||   |
+| 31      |     Open ||   |
+| 32      |     Open ||   |
+| 33      |     Open ||   |
+| 34      |     Open ||   |
+| 35      |     Open ||   |
+| 36      |     Open ||   |
+| 37      |     Open ||   |
+| 38      |     Open ||   |
+| 39      |     Open ||   |
+| 40      |     Open ||   |
+| 42      |     Open ||   |
+| 41      |     Open ||   |
+| 43      |     Open ||   |
+| 44      |     Open ||   |
+| 45      |     Open ||   |
+| 46      |     Open ||   |
+| 47      |     Hardwire Uplink for testing || 1   |
+| 48      |     Hardwire Uplink for testing || 1   |
 |=========================================================
