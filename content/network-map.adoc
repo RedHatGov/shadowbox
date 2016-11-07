@@ -16,6 +16,7 @@ At the end of the day, the link:http://www.cisco.com/c/en/us/products/collateral
 |=========================================================
 | VLAN ID | Subnet            | Network Name
 | 1       | 192.168.1.0/24    | Default / Provisioning
+| 2       | 192.168.2.0/24    | IPMI
 | 900     | 192.168.100.0/24  | Internal API
 | 901     | 192.168.101.0/24  | Storage
 | 902     | 192.168.102.0/24  | Storage Management
@@ -23,13 +24,29 @@ At the end of the day, the link:http://www.cisco.com/c/en/us/products/collateral
 | 904     | 192.168.104.0/24  | External
 |=========================================================
 
+.Shadowbox Router Port Assignments
+[options="header",halign="center"]
+|=========================================================
+| Port    |  Speed      |    Connection                 | IP               | VLANs
+| 1       |   1Gbps     |    Uplink                     | DHCP             | N/A
+| 2       |   1Gbps     |||
+| 3       |   1Gbps     |    Default/Provisioning       | 192.168.1.1      | 1
+| 4       |   1Gbps     |    External                   | 192.168.104.1    | 904
+| 5       |   1Gbps     |||
+| 6       |   100Mbps   |    IPMI                       |  192.168.2.1     | 2
+| 7       |   100Mbps   |||
+| 8       |   100Mbps   |||
+| 9       |   100Mbps   |||
+| 10      |   100Mbps   |||
+|=========================================================
 
-.Shadowbox Port Assignments
+
+.Shadowbox Switch Port Assignments
 [options="header",halign="center"]
 |=========================================================
 | Port    |     Connection                                                    | IP              | VLANs       | MAC
-| 1       |     Linksys AC1900 AC Wifi Router/Access Point (default gateway)  | 192.168.1.1     | 1           |
-| 2       |     Raspberry Pi 3 for DNS/DHCP                                   | 192.168.1.2     | 1           |
+| 1       |     MicroTik  RB2011UiAS-2HnD-IN (default gateway)                | 192.168.1.2     | 1           |
+| 2       |     Raspberry Pi 3 for DNS/DHCP                                   | 192.168.1.3     | 1           |
 | 3       |     Node 0 IPMI                                                   | 192.168.1.20    | 1           | 0C:C4:7A:C7:7B:EB
 | 4       |     Node 1 IPMI                                                   | 192.168.1.21    | 1           | 0C:C4:7A:90:DA:32
 | 5       |     Node 2 IPMI                                                   | 192.168.1.22    | 1           | 0C:C4:7A:CF:82:80
@@ -38,27 +55,27 @@ At the end of the day, the link:http://www.cisco.com/c/en/us/products/collateral
 | 8       |     Node 5 IPMI                                                   | 192.168.1.25    | 1           | 0C:C4:7A:CF:2C:19
 | 9       |     Node 6 IPMI                                                   | 192.168.1.26    | 1           | 0C:C4:7A:90:5C:CE
 | 10      |     Node 7 IPMI                                                   | 192.168.1.27    | 1           | 0C:C4:7A:90:DA:B1
-| 12      |     Node 0 NIC 0                                                  | 192.168.1.20    | 1,900-904   |
+| 12      |     Node 0 NIC 0                                                  | 192.168.1.30    | 1,900-904   |
 | 13      |     Node 0 NIC 1                                                  | LACP with NIC 0 |             |
-| 14      |     Node 1 NIC 0                                                  | 192.168.1.21    | 1,900-904   |
+| 14      |     Node 1 NIC 0                                                  | 192.168.1.31    | 1,900-904   |
 | 15      |     Node 1 NIC 1                                                  | LACP with NIC 0 |             |
-| 16      |     Node 2 NIC 0                                                  | 192.168.1.22    | 1,900-904   |
+| 16      |     Node 2 NIC 0                                                  | 192.168.1.32    | 1,900-904   |
 | 17      |     Node 2 NIC 1                                                  | LACP with NIC 0 |             |
-| 18      |     Node 3 NIC 0                                                  | 192.168.1.23    | 1,900-904   |
+| 18      |     Node 3 NIC 0                                                  | 192.168.1.33    | 1,900-904   |
 | 19      |     Node 3 NIC 1                                                  | LACP with NIC 0 |   |
-| 20      |     Node 4 NIC 0                                                  | 192.168.1.24    | 1,900-904   |
+| 20      |     Node 4 NIC 0                                                  | 192.168.1.34    | 1,900-904   |
 | 21      |     Node 4 NIC 1                                                  | LACP with NIC 0 |   |
-| 22      |     Node 5 NIC 0                                                  | 192.168.1.25    | 1,900-904   |
+| 22      |     Node 5 NIC 0                                                  | 192.168.1.35    | 1,900-904   |
 | 23      |     Node 5 NIC 1                                                  | LACP with NIC 0 |   |
-| 24      |     Node 6 NIC 0                                                  | 192.168.1.26    | 1,900-904   |
+| 24      |     Node 6 NIC 0                                                  | 192.168.1.36    | 1,900-904   |
 | 25      |     Node 6 NIC 1                                                  | LACP with NIC 0 |   |
-| 26      |     Node 7 NIC 0                                                  | 192.168.1.27    | 1,900-904   |
+| 26      |     Node 7 NIC 0                                                  | 192.168.1.37    | 1,900-904   |
 | 27      |     Node 7 NIC 1                                                  | LACP with NIC 0 |   |
-| 28      |     Node 8 NIC 0                                                  | 192.168.1.28    | 1,900-904   |
+| 28      |     Node 8 NIC 0                                                  | 192.168.1.38    | 1,900-904   |
 | 29      |     Node 8 NIC 1                                                  | LACP with NIC 0 |   |
-| 30      |     Open                                                          ||   |
-| 31      |     Open ||   |
-| 32      |     Open ||   |
+| 30      |     IPMI Network Uplink                                           | 192.168.2.2     | 2  |
+| 31      |     Default Port Uplink                                           | 192.168.1.2     | 1  |
+| 32      |     External Network Uplink                                       | 192.168.104.2   | 904 |
 | 33      |     Open ||   |
 | 34      |     Open ||   |
 | 35      |     Open ||   |
