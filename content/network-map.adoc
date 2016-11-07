@@ -28,8 +28,8 @@ At the end of the day, the link:http://www.cisco.com/c/en/us/products/collateral
 [options="header",halign="center"]
 |=========================================================
 | Port    |     Connection                                                    | IP              | VLANs       | MAC
-| 1       |     Linksys AC1900 AC Wifi Router/Access Point (default gateway)  | 192.168.1.1     | 1
-| 2       |     Raspberry Pi 3 for DNS/DHCP                                   | 192.168.1.2     | 1
+| 1       |     Linksys AC1900 AC Wifi Router/Access Point (default gateway)  | 192.168.1.1     | 1           |
+| 2       |     Raspberry Pi 3 for DNS/DHCP                                   | 192.168.1.2     | 1           |
 | 3       |     Node 0 IPMI                                                   | 192.168.1.20    | 1           | 0C:C4:7A:C7:7B:EB
 | 4       |     Node 1 IPMI                                                   | 192.168.1.21    | 1           | 0C:C4:7A:90:DA:32
 | 5       |     Node 2 IPMI                                                   | 192.168.1.22    | 1           | 0C:C4:7A:CF:82:80
