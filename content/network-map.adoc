@@ -71,11 +71,11 @@ At the end of the day, the link:http://www.cisco.com/c/en/us/products/collateral
 | 24      |     Node 6 NIC 1                                                  | LACP with NIC 0 |   |
 | 25      |     Node 7 NIC 0                                                  | 192.168.1.37    | 1,900-904   |
 | 26      |     Node 7 NIC 1                                                  | LACP with NIC 0 |   |
-| 27      |     Node 8 NIC 0                                                  | 192.168.1.38    | 1,900-904   |
-| 28      |     Node 8 NIC 1                                                  | LACP with NIC 0 |   |
-| 29      |     IPMI Network Uplink                                           | 192.168.2.2     | 2  |
-| 30      |     Default Port Uplink                                           | 192.168.1.2     | 1  |
-| 31      |     External Network Uplink                                       | 192.168.104.2   | 904 |
+| 27      |     IPMI Network Uplink                                           | 192.168.2.2     | 2  |
+| 28      |     Default Port Uplink                                           | 192.168.1.2     | 1  |
+| 29      |     External Network Uplink                                       | 192.168.104.2   | 904 |
+| 30      |     Open ||   |
+| 31      |     Open ||   |
 | 32      |     Open ||   |
 | 33      |     Open ||   |
 | 34      |     Open ||   |
@@ -90,7 +90,7 @@ At the end of the day, the link:http://www.cisco.com/c/en/us/products/collateral
 | 43      |     Open ||   |
 | 44      |     Open ||   |
 | 45      |     Open ||   |
-| 46      |     Open ||   | 
+| 46      |     Open ||   |
 | 47      |     Hardwire Uplink for testing || 1   |
 | 48      |     Hardwire Uplink for testing || 1   |
 |=========================================================
