@@ -34,7 +34,7 @@ At the end of the day, the link:http://www.cisco.com/c/en/us/products/collateral
 | 4       |   1Gbps     |    External                   | 192.168.104.1    | 904
 | 5       |   1Gbps     |||
 | 6       |   100Mbps   |    IPMI                       |  192.168.2.1     | 2
-| 7       |   100Mbps   |||
+| 7       |   100Mbps   |    Cisco Management           |                  |
 | 8       |   100Mbps   |||
 | 9       |   100Mbps   |||
 | 10      |   100Mbps   |||
@@ -55,27 +55,28 @@ At the end of the day, the link:http://www.cisco.com/c/en/us/products/collateral
 | 8       |     Node 5 IPMI                                                   | 192.168.1.25    | 2           | 0C:C4:7A:CF:2C:19
 | 9       |     Node 6 IPMI                                                   | 192.168.1.26    | 2           | 0C:C4:7A:90:5C:CE
 | 10      |     Node 7 IPMI                                                   | 192.168.1.27    | 2           | 0C:C4:7A:90:DA:B1
-| 12      |     Node 0 NIC 0                                                  | 192.168.1.30    | 1-2,900-904   |
-| 13      |     Node 0 NIC 1                                                  | LACP with NIC 0 |             |
-| 14      |     Node 1 NIC 0                                                  | 192.168.1.31    | 1,900-904   |
-| 15      |     Node 1 NIC 1                                                  | LACP with NIC 0 |             |
-| 16      |     Node 2 NIC 0                                                  | 192.168.1.32    | 1,900-904   |
-| 17      |     Node 2 NIC 1                                                  | LACP with NIC 0 |             |
-| 18      |     Node 3 NIC 0                                                  | 192.168.1.33    | 1,900-904   |
-| 19      |     Node 3 NIC 1                                                  | LACP with NIC 0 |   |
-| 20      |     Node 4 NIC 0                                                  | 192.168.1.34    | 1,900-904   |
-| 21      |     Node 4 NIC 1                                                  | LACP with NIC 0 |   |
-| 22      |     Node 5 NIC 0                                                  | 192.168.1.35    | 1,900-904   |
-| 23      |     Node 5 NIC 1                                                  | LACP with NIC 0 |   |
-| 24      |     Node 6 NIC 0                                                  | 192.168.1.36    | 1,900-904   |
-| 25      |     Node 6 NIC 1                                                  | LACP with NIC 0 |   |
-| 26      |     Node 7 NIC 0                                                  | 192.168.1.37    | 1,900-904   |
-| 27      |     Node 7 NIC 1                                                  | LACP with NIC 0 |   |
-| 28      |     Node 8 NIC 0                                                  | 192.168.1.38    | 1,900-904   |
-| 29      |     Node 8 NIC 1                                                  | LACP with NIC 0 |   |
-| 30      |     IPMI Network Uplink                                           | 192.168.2.2     | 2  |
-| 31      |     Default Port Uplink                                           | 192.168.1.2     | 1  |
-| 32      |     External Network Uplink                                       | 192.168.104.2   | 904 |
+| 11      |     Node 0 NIC 0                                                  | 192.168.1.30    | 1-2,900-904   |
+| 12      |     Node 0 NIC 1                                                  | LACP with NIC 0 |             |
+| 13      |     Node 1 NIC 0                                                  | 192.168.1.31    | 1,900-904   |
+| 14      |     Node 1 NIC 1                                                  | LACP with NIC 0 |             |
+| 15      |     Node 2 NIC 0                                                  | 192.168.1.32    | 1,900-904   |
+| 16      |     Node 2 NIC 1                                                  | LACP with NIC 0 |             |
+| 17      |     Node 3 NIC 0                                                  | 192.168.1.33    | 1,900-904   |
+| 18      |     Node 3 NIC 1                                                  | LACP with NIC 0 |   |
+| 19      |     Node 4 NIC 0                                                  | 192.168.1.34    | 1,900-904   |
+| 20      |     Node 4 NIC 1                                                  | LACP with NIC 0 |   |
+| 21      |     Node 5 NIC 0                                                  | 192.168.1.35    | 1,900-904   |
+| 22      |     Node 5 NIC 1                                                  | LACP with NIC 0 |   |
+| 23      |     Node 6 NIC 0                                                  | 192.168.1.36    | 1,900-904   |
+| 24      |     Node 6 NIC 1                                                  | LACP with NIC 0 |   |
+| 25      |     Node 7 NIC 0                                                  | 192.168.1.37    | 1,900-904   |
+| 26      |     Node 7 NIC 1                                                  | LACP with NIC 0 |   |
+| 27      |     Node 8 NIC 0                                                  | 192.168.1.38    | 1,900-904   |
+| 28      |     Node 8 NIC 1                                                  | LACP with NIC 0 |   |
+| 29      |     IPMI Network Uplink                                           | 192.168.2.2     | 2  |
+| 30      |     Default Port Uplink                                           | 192.168.1.2     | 1  |
+| 31      |     External Network Uplink                                       | 192.168.104.2   | 904 |
+| 32      |     Open ||   |
 | 33      |     Open ||   |
 | 34      |     Open ||   |
 | 35      |     Open ||   |
@@ -84,12 +85,12 @@ At the end of the day, the link:http://www.cisco.com/c/en/us/products/collateral
 | 38      |     Open ||   |
 | 39      |     Open ||   |
 | 40      |     Open ||   |
-| 42      |     Open ||   |
 | 41      |     Open ||   |
+| 42      |     Open ||   |
 | 43      |     Open ||   |
 | 44      |     Open ||   |
 | 45      |     Open ||   |
-| 46      |     Open ||   |
+| 46      |     Open ||   | 
 | 47      |     Hardwire Uplink for testing || 1   |
 | 48      |     Hardwire Uplink for testing || 1   |
 |=========================================================
