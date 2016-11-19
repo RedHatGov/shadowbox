@@ -27,14 +27,14 @@ At the end of the day, the link:http://www.cisco.com/c/en/us/products/collateral
 .Shadowbox Router Port Assignments
 [options="header",halign="center"]
 |=========================================================
-| Port    |  Speed      |    Connection                 | IP               | VLANs
-| 1       |   1Gbps     |    Uplink                     | DHCP             | N/A
+| Port    |  Speed      |    Connection                 | IP               | VLANs  | MAC
+| 1       |   1Gbps     | User Network                  | 192.168.1.1      |  2     | E4:8D:8C:7D:B4:2D
 | 2       |   1Gbps     |||
-| 3       |   1Gbps     |    Default/Provisioning       | 192.168.1.1      | 1
-| 4       |   1Gbps     |    External                   | 192.168.104.1    | 904
+| 3       |   1Gbps     |||
+| 4       |   1Gbps     |||
 | 5       |   1Gbps     |||
-| 6       |   100Mbps   |    IPMI                       |  192.168.2.1     | 2
-| 7       |   100Mbps   |    Cisco Management           |                  |
+| 6       |   100Mbps   |||
+| 7       |   100Mbps   |||
 | 8       |   100Mbps   |||
 | 9       |   100Mbps   |||
 | 10      |   100Mbps   |||
