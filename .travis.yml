@@ -14,7 +14,7 @@ script:
 env:
   global:
   - GH_USER=jduncan-rva
-  - GH_REPO=blog
+  - GH_REPO=shadowbox
   - GH_BRANCH=gh-pages
   - GH_GROUP=RedHatGov
   - secure: CHs3T4SLpz5xwB2/1He275NY56ch8izZOtzmeTP1fJE+TnK+XICD+ydYUJ268Xk698c83AGtWyYmsKJoWfJQtu8D4a/Yz5whm+gYEn7gaAE14dAo+AJ8nix/+33bMv8XrhM0L4qp1HBtXwF/c4aa7E3xNI1MKU07y0oKSSpqJqTytNVIyxHKOdddI5Nbj0+hcrmrtzSW7eBtZ7g3qViemmtK3/XGCfdqxFgdhht9wKk2yZPVTbI45r8PZQdii5Gnv84+SVnNjgiHQuhAk1X/2krDOx0QwihBZ+8vBu4oAEFWiWASTYhL5k0h+hQqyFpggLS6EGCSIg40E4RfmM9vq9NGeBF5QKfiwm5KlU0vmhgkKz8IyxxNiPdH8aEBL10POYsKd3qyH9oCjvgPmdIV8MiFNFZkgdueVw7FMMhOCrafBbv/XgGIM/FNPdFSV4c6dazmGOepK5IREZdSYUmScyC3g0qzKNh3HEojE25BOgid4GeGnkuVPJJpYhfrSeT1M4PFpB6TD3l/yYyVySK9d7ng+ky4QjJdyhHa0xkYsaf+JpId3AEdUqhFmCVzYx+Pb/mRmPmpJ/3HULZmNXawBe3m2Cv1I/qLw+MBZdrTlgLJEwDjcw7ZTV2cHLkq9OJD2r8jq/wNkm7x+2PSs9aUag/bnSGr8PN/rGloiLbi71M=
