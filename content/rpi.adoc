@@ -6,7 +6,7 @@
 :summary: The Rev1 Shadowbox Raspberry Pi Configuration
 :category: rev1
 :tags: raspberry-pi,config
-
+:status: draft 
 == Why Use a Raspberry Pi?
 
 == Operating System

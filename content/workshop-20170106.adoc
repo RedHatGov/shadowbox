@@ -1,0 +1,57 @@
+= Weaponizing Shadowbox - January 2017 Workshop
+:author: Jamie Duncan
+:date: 2016-10-20 11:32
+:modified: 2016-10-20 11:32
+:slug: workshop-20170106
+:summary: Agenda and Notes for January 2017 Workshop
+:category: Meetings
+:tags: hackathon,workshop,meeting,planning
+:status: draft
+
+== Logistics
+
+[options=halign="center"]
+|=========================================
+| When            | Friday January 6, 2017
+| Duration        | 9a - 4p
+| Where           | Courage on the 5th floor at link:https://goo.gl/maps/iweK1P1i9G62[Red Hat's Tysons Office]
+| Who             | Anyone interested in working on Shadowbox
+|=========================================
+
+== Past
+
+=== Past Use
+_Jamie Duncan / Kevin Jones_
+
+A summary of where we have already used the Shadowbox and where it is slated to be in the near future. (Jamie Duncan)
+
+== Present
+
+=== Current Configuration
+_Kevin Jones / Gerald Dykeman_
+
+A recap of the current configuration
+
+=== Remote Access
+_Gerald Dykeman_
+
+=== Current Issues
+_Jamie Duncan_
+
+Any hardware or access issues we have come across during the first uses
+
+== Future
+
+=== Special Interest Groups for Shadowbox
+
+==== Networking
+
+==== Infrastructure
+
+==== Upgrades
+
+==== Workshops
+
+=== Reservations
+
+=== Remote Access Improvements

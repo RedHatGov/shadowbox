@@ -6,6 +6,7 @@
 :summary: The Rev1 Shadowbox OpenStack Configuration
 :category: rev1
 :tags: openstack,config
+:status: draft
 
 == Networking Configuration
 
