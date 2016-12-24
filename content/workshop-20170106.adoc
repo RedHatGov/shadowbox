@@ -10,7 +10,7 @@
 
 == Logistics
 
-[options=halign="center"]
+[halign="center"]
 |=========================================
 | When            | Friday January 6, 2017
 | Duration        | 9a - 4p
