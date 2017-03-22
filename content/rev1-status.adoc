@@ -1,0 +1,34 @@
+= Revision One Highlights
+:author: Jamie Duncan
+:date: 2016-10-20 11:32
+:modified: 2016-10-20 11:32
+:slug: rev-1-status-20170322
+:summary: An update about Rev1 and where it stands as of 20170322
+:category: rev1
+:tags: rev1,status
+:gallery: rev1
+
+
+Revision One of Shadowbox is currently in process. It has been stretched a little due to the simple fact that this is a "spare cycles" project with people who rarely have spare cycles.
+All of the Rev1 tasks are tracked on link:https://trello.com/b/KyamOxNo/shadowbox?menu=filter&filter=label:rev1[Trello].
+
+== Current Status
+
+* We have used Shadowbox multiple times in its current configuration.
+* There is one bad node (motherboard is suspected to be DOA). So we have 7 nodes functional. This is stopping us from the planned configuration of a 2-node control plane.
+* There is a process to set up the router to work inside and outside the RedHat intranet. Many thanks to Kevin Jones.
+* The 2-node control plane will have an additional 2TB of storage via SSDs donated by link:https://www.nimblestorage.com/[Nimble Storage]. The current stack outline when fully deployed will be:
+  * 2-node self-hosted RHEV cluster for the control plane housing
+    * Cloudforms for automation / front door access
+    * Satellite 6 for content management
+    * Ansible Tower for automated deployments
+    * IPA for identity management
+    * OpenStack Undercloud
+  * 2TB Gluster cluster on the control plane nodes
+  * 6 node hyper-converged OSP-latest/Ceph installation
+  * OpenShift deployed into OpenStack
+
+== Major Lessons / TODO
+
+* There should be no need for a Raspberry Pi right now. The router we chose can handle most ancillary services.
+* The biggest TODO right now is replacing the bad node. The buildout as it currently stands makes replacing a node problematic. You have to remove the entire sub-assembly of server nodes and partially disassemble it. We have a better design in mind. We just haven't had a chance to implement it yet. This is the current blocker.
