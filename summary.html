@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="utf-8" />
+        <title>Welcome to Shadowbox!</title>
+        <link rel="stylesheet" href="https://www.rhshadowbox.com/theme/css/main.css" />
+        <link href="https://www.rhshadowbox.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Shadowbox by Red Hat Atom Feed" />
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        <script src="https://www.rhshadowbox.com/theme/css/jquery.magnific-popup.min.js"></script>
+        <link rel="stylesheet" href="https://www.rhshadowbox.com/theme/css/magnific-popup.css" />
+
+        <!--[if IE]>
+            <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+</head>
+
+<body id="index" class="home">
+  <script>
+  $(document).ready(function() {
+  	$('.popup-gallery').magnificPopup({
+  		delegate: 'a',
+  		type: 'image',
+  		tLoading: 'Loading image #%curr%...',
+  		mainClass: 'mfp-img-mobile',
+  		gallery: {
+  			enabled: true,
+  			navigateByImgClick: true,
+  			preload: [0,1] // Will preload 0 - before current, and 1 after the current image
+  		},
+  		image: {
+  			tError: '<a href="%url%">The image #%curr%</a> could not be loaded.',
+  			titleSrc: function(item) {
+  				return item.el.attr('title') + '<small>by Marsel Van Oosten</small>';
+  			}
+  		}
+  	});
+  });
+  </script>
+        <header id="banner" class="body">
+                <h1><a href="https://www.rhshadowbox.com/">Shadowbox by Red Hat </a></h1>
+                <nav><ul>
+                </ul>
+<form id="search" action"#" onsubmit="javascript:window.open('https://duckduckgo.com/?q='+document.getElementById('keywords').value+'+site:https://www.rhshadowbox.com');">
+                        <input id="keywords" type="text" />
+                    </form>
+                </nav>
+<div id="submenu">
+                    <ul>
+                            <li><a href="https://www.rhshadowbox.com/category/rev0.html">Rev0</a></li>
+                            <li class="active"><a href="https://www.rhshadowbox.com/category/rev1.html">rev1</a></li>
+                            <li><a href="https://www.rhshadowbox.com/category/subsystems.html">Subsystems</a></li>
+                    </ul>
+                <div>
+        </header><!-- /#banner -->
+<section id="content" class="body">
+  <article>
+    <header>
+      <h1 class="entry-title">
+        <a href="https://www.rhshadowbox.com/summary.html" rel="bookmark"
+           title="Permalink to Welcome to Shadowbox!">Welcome to Shadowbox!</a></h1>
+    </header>
+
+    <div class="entry-content">
+<footer class="post-info">
+        <span>Mon 24 October 2016</span>
+<span>| tags: <a href="https://www.rhshadowbox.com/tag/rev1.html">rev1</a><a href="https://www.rhshadowbox.com/tag/thanksgiving.html">thanksgiving</a><a href="https://www.rhshadowbox.com/tag/trello.html">trello</a></span>
+</footer><!-- /.post-info -->      <div class="sect1">
+<h2 id="_what_8217_s_the_plan">What&#8217;s the Plan?</h2>
+<div class="sectionbody">
+<div class="paragraph"><p>Squeezing 8 servers worth of hardware into something a little bigger than a roller board takes planning. That is what this site is for.</p></div>
+<div class="paragraph"><p>In addition to <a href="https://trello.com/b/KyamOxNo/shadowbox">Trello</a>, we will use this repository to maintain design schematics, plan upgrades, and talk about the cool ways we figure out to use this piece of hardware.</p></div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_rev1_the_thanksgiving_release">Rev1 - The Thanksgiving release</h2>
+<div class="sectionbody">
+<div class="paragraph"><p>Rev0 came out in mid-October. The next release is planned to be completed and functional by Thanksgiving. Highlights include:</p></div>
+<div class="ulist"><ul>
+<li>
+<p>
+all 8 nodes functional
+</p>
+</li>
+<li>
+<p>
+improved networking hardware from the Kingsmill version
+</p>
+</li>
+<li>
+<p>
+documented processes
+</p>
+</li>
+<li>
+<p>
+the beginnings of documented procedures
+</p>
+</li>
+<li>
+<p>
+initial deployment playbooks
+</p>
+</li>
+</ul></div>
+<div class="paragraph"><p>So stay tuned, and feel free to help out!</p></div>
+</div>
+</div>
+
+    </div><!-- /.entry-content -->
+    <div class="comments">
+      <h2>Comments !</h2>
+      <div id="disqus_thread"></div>
+      <script type="text/javascript">
+        var disqus_identifier = "summary.html";
+        var disqus_url = "https://www.rhshadowbox.com/summary.html";
+        (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//shadowbox-1.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+      </script>
+    </div>
+
+  </article>
+</section>
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>links</h2>
+                        <ul>
+                            <li><a href="http://www.github.com/RedHatGov/automated_workshops">Workshop Code</a></li>
+                            <li><a href="http://www.github.com/RedHatGov/shadowbox">Site Code</a></li>
+                            <li><a href="https://trello.com/b/KyamOxNo/shadowbox">Trello</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+                            <li><a href="https://www.rhshadowbox.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate">atom feed</a></li>
+
+                            <li><a href="http://www.twitter.com/rh_shadowbox">twitter</a></li>
+                            <li><a href="http://www.twitter.com/RedHatGov">RedHatGov</a></li>
+                            <li><a href="http://www.github.com/RedHatGov">code</a></li>
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <p>Shadowbox is not a <a href="http://www.redhat.com">Red Hat</a> Product. It is an internal project sponsored by Red Hat with the goal of innovating around this problem.</p>
+                <p>Powered by <a href="http://getpelican.com/">Pelican</a>. Theme based on <a href="https://github.com/blueicefield/pelican-blueidea/">blueidea</a>, inspired by the default theme.</p>
+        </footer><!-- /#contentinfo -->
+
+    <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-87973510-1']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+    </script>
+<script type="text/javascript">
+    var disqus_shortname = 'shadowbox-1';
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+</script>
+</body>
+</html>

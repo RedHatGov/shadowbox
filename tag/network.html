@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="utf-8" />
+        <title>Shadowbox by Red Hat - network</title>
+        <link rel="stylesheet" href="https://www.rhshadowbox.com/theme/css/main.css" />
+        <link href="https://www.rhshadowbox.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Shadowbox by Red Hat Atom Feed" />
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        <script src="https://www.rhshadowbox.com/theme/css/jquery.magnific-popup.min.js"></script>
+        <link rel="stylesheet" href="https://www.rhshadowbox.com/theme/css/magnific-popup.css" />
+
+        <!--[if IE]>
+            <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+</head>
+
+<body id="index" class="home">
+  <script>
+  $(document).ready(function() {
+  	$('.popup-gallery').magnificPopup({
+  		delegate: 'a',
+  		type: 'image',
+  		tLoading: 'Loading image #%curr%...',
+  		mainClass: 'mfp-img-mobile',
+  		gallery: {
+  			enabled: true,
+  			navigateByImgClick: true,
+  			preload: [0,1] // Will preload 0 - before current, and 1 after the current image
+  		},
+  		image: {
+  			tError: '<a href="%url%">The image #%curr%</a> could not be loaded.',
+  			titleSrc: function(item) {
+  				return item.el.attr('title') + '<small>by Marsel Van Oosten</small>';
+  			}
+  		}
+  	});
+  });
+  </script>
+        <header id="banner" class="body">
+                <h1><a href="https://www.rhshadowbox.com/">Shadowbox by Red Hat </a></h1>
+                <nav><ul>
+                </ul>
+<form id="search" action"#" onsubmit="javascript:window.open('https://duckduckgo.com/?q='+document.getElementById('keywords').value+'+site:https://www.rhshadowbox.com');">
+                        <input id="keywords" type="text" />
+                    </form>
+                </nav>
+<div id="submenu">
+                    <ul>
+                            <li><a href="https://www.rhshadowbox.com/category/rev0.html">Rev0</a></li>
+                            <li><a href="https://www.rhshadowbox.com/category/rev1.html">rev1</a></li>
+                            <li><a href="https://www.rhshadowbox.com/category/subsystems.html">Subsystems</a></li>
+                    </ul>
+                <div>
+        </header><!-- /#banner -->
+
+            <aside id="featured" class="body">
+                <article>
+                    <h1 class="entry-title"><a href="https://www.rhshadowbox.com/network-config.html">Network Configuration</a></h1>
+<footer class="post-info">
+        <span>Tue 01 November 2016</span>
+<span>| tags: <a href="https://www.rhshadowbox.com/tag/network.html">network</a><a href="https://www.rhshadowbox.com/tag/config.html">config</a></span>
+</footer><!-- /.post-info --><div class="sect1">
+<h2 id="_network_concepts">Network Concepts</h2>
+<div class="sectionbody">
+<div class="paragraph"><p>At the end of the day, the <a href="http://www.cisco.com/c/en/us/products/collateral/switches/catalyst-4948-10-gigabit-ethernet-switch/prod_bulletin0900aecd80246560.html">switch</a> that is the backbone of the Shadowbox network will run multiple configurations, depending on the demo. This document will illustrate the physical wiring that will remain constant. We can then leverage this to build out multiple configurations for OpenStack, OpenShift, or any product combination we see fit to deploy.</p></div>
+<table class="tableblock frame-all grid-all"
+style="
+width:100%;
+">
+<caption class="title">Table 1. Shadowbox VLANs</caption>
+<col style="width:33%;">
+<col style="width:33%;">
+<col style="width:33%;">
+<thead>
+<tr>
+<th class="tableblock halign-center valign-top" > VLAN ID </th>
+<th class="tableblock halign-center valign-top" > Subnet            </th>
+<th class="tableblock halign-center valign-top" > Network Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-top" ><p class="tableblock">1</p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock">192.168.1.0/24</p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock">Default / Provisioning</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top" ><p class="tableblock">2</p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock">192.168.2.0/24</p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock">IPMI</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top" ><p class="tableblock">900</p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock">192.168.100.0/24</p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock">Internal API</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top" ><p class="tableblock">901</p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock">192.168.101.0/24</p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock">Storage</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top" ><p class="tableblock">902</p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock">192.168.102.0/24</p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock">Storage Management</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top" ><p class="tableblock">903</p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock">192.168.103.0/24</p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock">Tenant</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top" ><p class="tableblock">904</p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock">192.168.104.0/24</p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock">External</p></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all"
+style="
+width:100%;
+">
+<caption class="title">Table 2. Shadowbox Router Port Assignments</caption>
+<col style="width:16%;">
+<col style="width:16%;">
+<col style="width:16%;">
+<col style="width:16%;">
+<col style="width:16%;">
+<col style="width:16%;">
+<thead>
+<tr>
+<th class="tableblock halign-center valign-top" > Port    </th>
+<th class="tableblock halign-center valign-top" >  Speed      </th>
+<th class="tableblock halign-center valign-top" >    Connection                 </th>
+<th class="tableblock halign-center valign-top" > IP               </th>
+<th class="tableblock halign-center valign-top" > VLANs  </th>
+<th class="tableblock halign-center valign-top" > MAC</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-top" ><p class="tableblock">1</p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock">1Gbps</p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock">User Network</p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock">192.168.1.1</p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock">2</p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock">E4:8D:8C:7D:B4:2D</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top" ><p class="tableblock">2</p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock">1Gbps</p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock"></p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock"></p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock"></p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock">3</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top" ><p class="tableblock">1Gbps</p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock"></p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock"></p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock"></p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock">4</p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock">1Gbps</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top" ><p class="tableblock"></p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock"></p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock"></p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock">5</p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock">1Gbps</p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top" ><p class="tableblock"></p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock"></p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock">6</p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock">100Mbps</p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock"></p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top" ><p class="tableblock"></p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock">7</p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock">100Mbps</p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock"></p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock"></p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top" ><p class="tableblock">8</p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock">100Mbps</p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock"></p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock"></p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock"></p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock">9</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top" ><p class="tableblock">100Mbps</p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock"></p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock"></p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock"></p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock">10</p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock">100Mbps</p></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all"
+style="
+width:100%;
+">
+<caption class="title">Table 3. Shadowbox Switch Port Assignments</caption>
+<col style="width:20%;">
+<col style="width:20%;">
+<col style="width:20%;">
+<col style="width:20%;">
+<col style="width:20%;">
+<thead>
+<tr>
+<th class="tableblock halign-center valign-top" > Port    </th>
+<th class="tableblock halign-center valign-top" >     Connection                                                    </th>
+<th class="tableblock halign-center valign-top" > IP              </th>
+<th class="tableblock halign-center valign-top" > VLANs       </th>
+<th class="tableblock halign-center valign-top" > MAC</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-top" ><p class="tableblock">1</p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock">MicroTik  RB2011UiAS-2HnD-IN (default gateway)</p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock">192.168.1.2</p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock">1</p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top" ><p class="tableblock">2</p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock">Raspberry Pi 3 for DNS/DHCP</p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock">192.168.1.3</p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock">1</p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top" ><p class="tableblock">3</p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock">Node 0 IPMI</p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock">192.168.1.20</p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock">2</p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock">0C:C4:7A:C7:7B:EB</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top" ><p class="tableblock">4</p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock">Node 1 IPMI</p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock">192.168.1.21</p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock">2</p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock">0C:C4:7A:90:DA:32</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top" ><p class="tableblock">5</p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock">Node 2 IPMI</p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock">192.168.1.22</p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock">2</p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock">0C:C4:7A:CF:82:80</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top" ><p class="tableblock">6</p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock">Node 3 IPMI</p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock">192.168.1.23</p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock">2</p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock">0C:C4:7A:91:40:16</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top" ><p class="tableblock">7</p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock">Node 4 IPMI</p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock">192.168.1.24</p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock">2</p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock">0C:C4:7A:90:5C:ED</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top" ><p class="tableblock">8</p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock">Node 5 IPMI</p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock">192.168.1.25</p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock">2</p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock">0C:C4:7A:CF:2C:19</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top" ><p class="tableblock">9</p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock">Node 6 IPMI</p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock">192.168.1.26</p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock">2</p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock">0C:C4:7A:90:5C:CE</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top" ><p class="tableblock">10</p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock">Node 7 IPMI</p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock">192.168.1.27</p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock">2</p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock">0C:C4:7A:90:DA:B1</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top" ><p class="tableblock">11</p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock">Node 0 NIC 0</p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock">192.168.1.30</p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock">1-2,900-904</p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top" ><p class="tableblock">12</p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock">Node 0 NIC 1</p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock">LACP with NIC 0</p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock"></p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top" ><p class="tableblock">13</p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock">Node 1 NIC 0</p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock">192.168.1.31</p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock">1,900-904</p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top" ><p class="tableblock">14</p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock">Node 1 NIC 1</p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock">LACP with NIC 0</p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock"></p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top" ><p class="tableblock">15</p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock">Node 2 NIC 0</p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock">192.168.1.32</p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock">1,900-904</p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top" ><p class="tableblock">16</p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock">Node 2 NIC 1</p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock">LACP with NIC 0</p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock"></p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top" ><p class="tableblock">17</p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock">Node 3 NIC 0</p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock">192.168.1.33</p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock">1,900-904</p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top" ><p class="tableblock">18</p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock">Node 3 NIC 1</p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock">LACP with NIC 0</p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock"></p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top" ><p class="tableblock">19</p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock">Node 4 NIC 0</p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock">192.168.1.34</p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock">1,900-904</p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top" ><p class="tableblock">20</p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock">Node 4 NIC 1</p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock">LACP with NIC 0</p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock"></p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top" ><p class="tableblock">21</p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock">Node 5 NIC 0</p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock">192.168.1.35</p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock">1,900-904</p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top" ><p class="tableblock">22</p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock">Node 5 NIC 1</p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock">LACP with NIC 0</p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock"></p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top" ><p class="tableblock">23</p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock">Node 6 NIC 0</p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock">192.168.1.36</p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock">1,900-904</p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top" ><p class="tableblock">24</p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock">Node 6 NIC 1</p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock">LACP with NIC 0</p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock"></p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top" ><p class="tableblock">25</p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock">Node 7 NIC 0</p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock">192.168.1.37</p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock">1,900-904</p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top" ><p class="tableblock">26</p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock">Node 7 NIC 1</p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock">LACP with NIC 0</p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock"></p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top" ><p class="tableblock">27</p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock">IPMI Network Uplink</p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock">192.168.2.2</p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock">2</p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top" ><p class="tableblock">28</p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock">Default Port Uplink</p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock">192.168.1.2</p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock">1</p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top" ><p class="tableblock">29</p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock">External Network Uplink</p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock">192.168.104.2</p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock">904</p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top" ><p class="tableblock">30</p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock">Open</p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock"></p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock"></p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top" ><p class="tableblock">31</p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock">Open</p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock"></p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock"></p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top" ><p class="tableblock">32</p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock">Open</p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock"></p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock"></p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top" ><p class="tableblock">33</p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock">Open</p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock"></p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock"></p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top" ><p class="tableblock">34</p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock">Open</p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock"></p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock"></p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top" ><p class="tableblock">35</p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock">Open</p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock"></p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock"></p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top" ><p class="tableblock">36</p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock">Open</p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock"></p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock"></p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top" ><p class="tableblock">37</p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock">Open</p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock"></p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock"></p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top" ><p class="tableblock">38</p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock">Open</p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock"></p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock"></p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top" ><p class="tableblock">39</p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock">Open</p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock"></p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock"></p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top" ><p class="tableblock">40</p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock">Open</p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock"></p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock"></p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top" ><p class="tableblock">41</p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock">Open</p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock"></p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock"></p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top" ><p class="tableblock">42</p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock">Open</p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock"></p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock"></p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top" ><p class="tableblock">43</p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock">Open</p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock"></p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock"></p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top" ><p class="tableblock">44</p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock">Open</p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock"></p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock"></p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top" ><p class="tableblock">45</p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock">Open</p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock"></p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock"></p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top" ><p class="tableblock">46</p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock">Open</p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock"></p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock"></p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top" ><p class="tableblock">47</p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock">Hardwire Uplink for testing</p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock"></p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock">1</p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top" ><p class="tableblock">48</p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock">Hardwire Uplink for testing</p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock"></p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock">1</p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock"></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p><a href="https://www.rhshadowbox.com/network-config.html#disqus_thread">comments</a></p>                </article>
+<p class="paginator">
+    Page 1 / 1
+</p>
+            </aside><!-- /#featured -->
+            </ol><!-- /#posts-list -->
+            </section><!-- /#content -->
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>links</h2>
+                        <ul>
+                            <li><a href="http://www.github.com/RedHatGov/automated_workshops">Workshop Code</a></li>
+                            <li><a href="http://www.github.com/RedHatGov/shadowbox">Site Code</a></li>
+                            <li><a href="https://trello.com/b/KyamOxNo/shadowbox">Trello</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+                            <li><a href="https://www.rhshadowbox.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate">atom feed</a></li>
+
+                            <li><a href="http://www.twitter.com/rh_shadowbox">twitter</a></li>
+                            <li><a href="http://www.twitter.com/RedHatGov">RedHatGov</a></li>
+                            <li><a href="http://www.github.com/RedHatGov">code</a></li>
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <p>Shadowbox is not a <a href="http://www.redhat.com">Red Hat</a> Product. It is an internal project sponsored by Red Hat with the goal of innovating around this problem.</p>
+                <p>Powered by <a href="http://getpelican.com/">Pelican</a>. Theme based on <a href="https://github.com/blueicefield/pelican-blueidea/">blueidea</a>, inspired by the default theme.</p>
+        </footer><!-- /#contentinfo -->
+
+    <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-87973510-1']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+    </script>
+<script type="text/javascript">
+    var disqus_shortname = 'shadowbox-1';
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+</script>
+</body>
+</html>

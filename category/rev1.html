@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="utf-8" />
+        <title>Shadowbox by Red Hat - rev1</title>
+        <link rel="stylesheet" href="https://www.rhshadowbox.com/theme/css/main.css" />
+        <link href="https://www.rhshadowbox.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Shadowbox by Red Hat Atom Feed" />
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        <script src="https://www.rhshadowbox.com/theme/css/jquery.magnific-popup.min.js"></script>
+        <link rel="stylesheet" href="https://www.rhshadowbox.com/theme/css/magnific-popup.css" />
+
+        <!--[if IE]>
+            <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+</head>
+
+<body id="index" class="home">
+  <script>
+  $(document).ready(function() {
+  	$('.popup-gallery').magnificPopup({
+  		delegate: 'a',
+  		type: 'image',
+  		tLoading: 'Loading image #%curr%...',
+  		mainClass: 'mfp-img-mobile',
+  		gallery: {
+  			enabled: true,
+  			navigateByImgClick: true,
+  			preload: [0,1] // Will preload 0 - before current, and 1 after the current image
+  		},
+  		image: {
+  			tError: '<a href="%url%">The image #%curr%</a> could not be loaded.',
+  			titleSrc: function(item) {
+  				return item.el.attr('title') + '<small>by Marsel Van Oosten</small>';
+  			}
+  		}
+  	});
+  });
+  </script>
+        <header id="banner" class="body">
+                <h1><a href="https://www.rhshadowbox.com/">Shadowbox by Red Hat </a></h1>
+                <nav><ul>
+                </ul>
+<form id="search" action"#" onsubmit="javascript:window.open('https://duckduckgo.com/?q='+document.getElementById('keywords').value+'+site:https://www.rhshadowbox.com');">
+                        <input id="keywords" type="text" />
+                    </form>
+                </nav>
+<div id="submenu">
+                    <ul>
+                            <li><a href="https://www.rhshadowbox.com/category/rev0.html">Rev0</a></li>
+                            <li class="active"><a href="https://www.rhshadowbox.com/category/rev1.html">rev1</a></li>
+                            <li><a href="https://www.rhshadowbox.com/category/subsystems.html">Subsystems</a></li>
+                    </ul>
+                <div>
+        </header><!-- /#banner -->
+
+            <aside id="featured" class="body">
+                <article>
+                    <h1 class="entry-title"><a href="https://www.rhshadowbox.com/rev-1-status-20170322.html">Revision One Highlights</a></h1>
+<footer class="post-info">
+        <span>Wed 22 March 2017</span>
+<span>| tags: <a href="https://www.rhshadowbox.com/tag/rev1.html">rev1</a><a href="https://www.rhshadowbox.com/tag/status.html">status</a></span>
+</footer><!-- /.post-info --><div id="preamble">
+<div class="sectionbody">
+<div class="paragraph"><p>Revision One of Shadowbox is currently in process. It has been stretched a little due to the simple fact that this is a "spare cycles" project with people who rarely have spare cycles.
+All of the Rev1 tasks are tracked on <a href="https://trello.com/b/KyamOxNo/shadowbox?menu=filter&amp;filter=label:rev1">Trello</a>.</p></div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_current_status">Current Status</h2>
+<div class="sectionbody">
+<div class="ulist"><ul>
+<li>
+<p>
+We have used Shadowbox multiple times in its current configuration.
+</p>
+</li>
+<li>
+<p>
+There is one bad node (motherboard is suspected to be DOA). So we have 7 nodes functional. This is stopping us from the planned configuration of a 2-node control plane.
+</p>
+</li>
+<li>
+<p>
+There is a process to set up the router to work inside and outside the RedHat intranet. Many thanks to Kevin Jones.
+</p>
+</li>
+<li>
+<p>
+The 2-node control plane will have an additional 2TB of storage via SSDs donated by <a href="https://www.nimblestorage.com/">Nimble Storage</a>. The current stack outline when fully deployed will be:
+</p>
+<div class="ulist"><ul>
+<li>
+<p>
+2-node self-hosted RHEV cluster for the control plane housing
+</p>
+<div class="ulist"><ul>
+<li>
+<p>
+Cloudforms for automation / front door access
+</p>
+</li>
+<li>
+<p>
+Satellite 6 for content management
+</p>
+</li>
+<li>
+<p>
+Ansible Tower for automated deployments
+</p>
+</li>
+<li>
+<p>
+IPA for identity management
+</p>
+</li>
+<li>
+<p>
+OpenStack Undercloud
+</p>
+</li>
+</ul></div>
+</li>
+<li>
+<p>
+2TB Gluster cluster on the control plane nodes
+</p>
+</li>
+<li>
+<p>
+6 node hyper-converged OSP-latest/Ceph installation
+</p>
+</li>
+<li>
+<p>
+OpenShift deployed into OpenStack
+</p>
+</li>
+</ul></div>
+</li>
+</ul></div>
+<div class="paragraph"><p>We should be functionally using ever prodcut in the Red Hat Emerging Technology portfolio inside Shadowbox!</p></div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_major_lessons_todo">Major Lessons / TODO</h2>
+<div class="sectionbody">
+<div class="ulist"><ul>
+<li>
+<p>
+There should be no need for a Raspberry Pi right now. The router we chose can handle most ancillary services.
+</p>
+</li>
+<li>
+<p>
+The biggest TODO right now is replacing the bad node. The buildout as it currently stands makes replacing a node problematic. You have to remove the entire sub-assembly of server nodes and partially disassemble it. We have a better design in mind. We just haven&#8217;t had a chance to implement it yet. This is the current blocker.
+</p>
+</li>
+</ul></div>
+</div>
+</div>
+<p><a href="https://www.rhshadowbox.com/rev-1-status-20170322.html#disqus_thread">comments</a></p>                </article>
+            </aside><!-- /#featured -->
+                <section id="content" class="body">
+                    <h1>Other articles</h1>
+                    <ol id="posts-list" class="hfeed">
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="https://www.rhshadowbox.com/network-config.html" rel="bookmark"
+                           title="Permalink to Network Configuration">Network Configuration</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <span>Tue 01 November 2016</span>
+<span>| tags: <a href="https://www.rhshadowbox.com/tag/network.html">network</a><a href="https://www.rhshadowbox.com/tag/config.html">config</a></span>
+</footer><!-- /.post-info -->                The Rev1 Shadowbox Network Configuration
+                <a class="readmore" href="https://www.rhshadowbox.com/network-config.html">read more</a>
+<p><a href="https://www.rhshadowbox.com/network-config.html#disqus_thread">comments</a></p>                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="https://www.rhshadowbox.com/rev-1-highlights.html" rel="bookmark"
+                           title="Permalink to Revision One Highlights">Revision One Highlights</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <span>Mon 31 October 2016</span>
+<span>| tags: <a href="https://www.rhshadowbox.com/tag/rev1.html">rev1</a><a href="https://www.rhshadowbox.com/tag/overview.html">overview</a><a href="https://www.rhshadowbox.com/tag/builds.html">builds</a></span>
+</footer><!-- /.post-info -->                A walk through Rev 1 and what it will have going for it
+                <a class="readmore" href="https://www.rhshadowbox.com/rev-1-highlights.html">read more</a>
+<p><a href="https://www.rhshadowbox.com/rev-1-highlights.html#disqus_thread">comments</a></p>                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="https://www.rhshadowbox.com/summary.html" rel="bookmark"
+                           title="Permalink to Welcome to Shadowbox!">Welcome to Shadowbox!</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <span>Mon 24 October 2016</span>
+<span>| tags: <a href="https://www.rhshadowbox.com/tag/rev1.html">rev1</a><a href="https://www.rhshadowbox.com/tag/thanksgiving.html">thanksgiving</a><a href="https://www.rhshadowbox.com/tag/trello.html">trello</a></span>
+</footer><!-- /.post-info -->                What this site will be used for
+                <a class="readmore" href="https://www.rhshadowbox.com/summary.html">read more</a>
+<p><a href="https://www.rhshadowbox.com/summary.html#disqus_thread">comments</a></p>                </div><!-- /.entry-content -->
+            </article></li>
+            </ol><!-- /#posts-list -->
+<p class="paginator">
+    Page 1 / 1
+</p>
+            </section><!-- /#content -->
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>links</h2>
+                        <ul>
+                            <li><a href="http://www.github.com/RedHatGov/automated_workshops">Workshop Code</a></li>
+                            <li><a href="http://www.github.com/RedHatGov/shadowbox">Site Code</a></li>
+                            <li><a href="https://trello.com/b/KyamOxNo/shadowbox">Trello</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+                            <li><a href="https://www.rhshadowbox.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate">atom feed</a></li>
+
+                            <li><a href="http://www.twitter.com/rh_shadowbox">twitter</a></li>
+                            <li><a href="http://www.twitter.com/RedHatGov">RedHatGov</a></li>
+                            <li><a href="http://www.github.com/RedHatGov">code</a></li>
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <p>Shadowbox is not a <a href="http://www.redhat.com">Red Hat</a> Product. It is an internal project sponsored by Red Hat with the goal of innovating around this problem.</p>
+                <p>Powered by <a href="http://getpelican.com/">Pelican</a>. Theme based on <a href="https://github.com/blueicefield/pelican-blueidea/">blueidea</a>, inspired by the default theme.</p>
+        </footer><!-- /#contentinfo -->
+
+    <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-87973510-1']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+    </script>
+<script type="text/javascript">
+    var disqus_shortname = 'shadowbox-1';
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+</script>
+</body>
+</html>

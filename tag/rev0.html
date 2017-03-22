@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="utf-8" />
+        <title>Shadowbox by Red Hat - rev0</title>
+        <link rel="stylesheet" href="https://www.rhshadowbox.com/theme/css/main.css" />
+        <link href="https://www.rhshadowbox.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Shadowbox by Red Hat Atom Feed" />
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        <script src="https://www.rhshadowbox.com/theme/css/jquery.magnific-popup.min.js"></script>
+        <link rel="stylesheet" href="https://www.rhshadowbox.com/theme/css/magnific-popup.css" />
+
+        <!--[if IE]>
+            <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+</head>
+
+<body id="index" class="home">
+  <script>
+  $(document).ready(function() {
+  	$('.popup-gallery').magnificPopup({
+  		delegate: 'a',
+  		type: 'image',
+  		tLoading: 'Loading image #%curr%...',
+  		mainClass: 'mfp-img-mobile',
+  		gallery: {
+  			enabled: true,
+  			navigateByImgClick: true,
+  			preload: [0,1] // Will preload 0 - before current, and 1 after the current image
+  		},
+  		image: {
+  			tError: '<a href="%url%">The image #%curr%</a> could not be loaded.',
+  			titleSrc: function(item) {
+  				return item.el.attr('title') + '<small>by Marsel Van Oosten</small>';
+  			}
+  		}
+  	});
+  });
+  </script>
+        <header id="banner" class="body">
+                <h1><a href="https://www.rhshadowbox.com/">Shadowbox by Red Hat </a></h1>
+                <nav><ul>
+                </ul>
+<form id="search" action"#" onsubmit="javascript:window.open('https://duckduckgo.com/?q='+document.getElementById('keywords').value+'+site:https://www.rhshadowbox.com');">
+                        <input id="keywords" type="text" />
+                    </form>
+                </nav>
+<div id="submenu">
+                    <ul>
+                            <li><a href="https://www.rhshadowbox.com/category/rev0.html">Rev0</a></li>
+                            <li><a href="https://www.rhshadowbox.com/category/rev1.html">rev1</a></li>
+                            <li><a href="https://www.rhshadowbox.com/category/subsystems.html">Subsystems</a></li>
+                    </ul>
+                <div>
+        </header><!-- /#banner -->
+
+            <aside id="featured" class="body">
+                <article>
+                    <h1 class="entry-title"><a href="https://www.rhshadowbox.com/introducing-shadowbox.html">The Kingsmill Release</a></h1>
+<footer class="post-info">
+        <span>Mon 24 October 2016</span>
+<span>| tags: <a href="https://www.rhshadowbox.com/tag/rev0.html">rev0</a><a href="https://www.rhshadowbox.com/tag/kingsmill.html">kingsmill</a></span>
+</footer><!-- /.post-info --><div class="sect1">
+<h2 id="_kingsmill">Kingsmill</h2>
+<div class="sectionbody">
+<div class="paragraph"><p>Every year the Red Hat Public Sector Team has an off-site event. For the past few years it has been held at the <a href="https://www.kingsmill.com">Kingsmill Golf Resort</a>. It&#8217;s a frantic 3 days of meetings, training, and networking. This year someone had the amazing idea of holding a <em>Demo Jam</em>.</p></div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_demo_jam">Demo Jam</h2>
+<div class="sectionbody">
+<div class="paragraph"><p>The rules were pretty simple. You came up with the coolest demo you could think of using Red Hat products. You had 10 minutes after dinner on Wednesday night at Kingsmill to show it to everyone at the event (~350 people this year). After everyone was done, the team with the loudest applause won.</p></div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_revision_0_the_kingsmill_release">Revision 0 - The Kingsmill release</h2>
+<div class="sectionbody">
+<div class="paragraph"><p>We had gotten approval to put Shadowbox together a couple of months ago, but our day jobs had interfered with making much progress. We set ourselves a deadline of getting something ready for the Kingsmill Demo Jam. We didn&#8217;t have to have the entire thing polished and ready, but it needed to show multiple products simultaneously.</p></div>
+<div class="paragraph"><p>We ended up getting 4 nodes up and running (we ran out of <a href="http://www.mini-box.com/s.nl/it.A/id.417/.f">Pico PSUs</a>). On these 4 nodes we were able to run:</p></div>
+<div class="sect2">
+<h3 id="_the_infrastructure">The Infrastructure</h3>
+<div class="ulist"><ul>
+<li>
+<p>
+DNS and DHCP for the network
+</p>
+</li>
+<li>
+<p>
+RHEV-M on a physical node with DNS/DHCP
+</p>
+</li>
+<li>
+<p>
+Gluster on a single node
+</p>
+</li>
+<li>
+<p>
+2 RHEL 7 hypervisors conncted to RHEV-M
+</p>
+</li>
+</ul></div>
+<div class="paragraph"><p>On top of that we deployed:</p></div>
+</div>
+<div class="sect2">
+<h3 id="_the_platform">The Platform</h3>
+<div class="ulist"><ul>
+<li>
+<p>
+OpenShift 3.3
+</p>
+</li>
+<li>
+<p>
+Configured to use the Gluster hardware node for Persistant Volume
+</p>
+</li>
+</ul></div>
+<div class="paragraph"><p>Inside OpenShift we deployed a <a href="https://github.com/jduncan-rva/php-demo-app">PHP web app</a> that is a simple image uploader application.</p></div>
+</div>
+<div class="sect2">
+<h3 id="_the_demo">The Demo</h3>
+<div class="paragraph"><p>For our 10 minutes on stage we explained what we had made, and then we let everyone in the room connect to the Shadowbox&#8217;s integrated Wifi. Since we control DNS in that network they were able to browse to our app deployed in OpenShift using an <span class="monospaced">example.com</span> domain.</p></div>
+<div class="paragraph"><p>We had a great time, and everything worked just like it was supposed to.</p></div>
+</div>
+</div>
+</div>
+<p><a href="https://www.rhshadowbox.com/introducing-shadowbox.html#disqus_thread">comments</a></p>                </article>
+<p class="paginator">
+    Page 1 / 1
+</p>
+            </aside><!-- /#featured -->
+            </ol><!-- /#posts-list -->
+            </section><!-- /#content -->
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>links</h2>
+                        <ul>
+                            <li><a href="http://www.github.com/RedHatGov/automated_workshops">Workshop Code</a></li>
+                            <li><a href="http://www.github.com/RedHatGov/shadowbox">Site Code</a></li>
+                            <li><a href="https://trello.com/b/KyamOxNo/shadowbox">Trello</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+                            <li><a href="https://www.rhshadowbox.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate">atom feed</a></li>
+
+                            <li><a href="http://www.twitter.com/rh_shadowbox">twitter</a></li>
+                            <li><a href="http://www.twitter.com/RedHatGov">RedHatGov</a></li>
+                            <li><a href="http://www.github.com/RedHatGov">code</a></li>
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <p>Shadowbox is not a <a href="http://www.redhat.com">Red Hat</a> Product. It is an internal project sponsored by Red Hat with the goal of innovating around this problem.</p>
+                <p>Powered by <a href="http://getpelican.com/">Pelican</a>. Theme based on <a href="https://github.com/blueicefield/pelican-blueidea/">blueidea</a>, inspired by the default theme.</p>
+        </footer><!-- /#contentinfo -->
+
+    <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-87973510-1']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+    </script>
+<script type="text/javascript">
+    var disqus_shortname = 'shadowbox-1';
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+</script>
+</body>
+</html>

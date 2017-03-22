@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Shadowbox by Red Hat - Rev0</title><link href="https://www.rhshadowbox.com/" rel="alternate"></link><link href="https://www.rhshadowbox.com/feeds/rev0.atom.xml" rel="self"></link><id>https://www.rhshadowbox.com/</id><updated>2017-03-22T19:38:35-04:00</updated><entry><title>Introduction</title><link href="https://www.rhshadowbox.com/what-is-shadowbox.html" rel="alternate"></link><published>2016-10-24T14:17:02-04:00</published><updated>2017-03-22T19:38:35-04:00</updated><author><name>Jamie Duncan</name></author><id>tag:www.rhshadowbox.com,2016-10-24:/what-is-shadowbox.html</id><summary type="html">Introducing the Shadowbox Concept</summary><content type="html">&lt;div id="preamble"&gt;
+&lt;div class="sectionbody"&gt;
+&lt;div class="imageblock"&gt;
+&lt;div class="content"&gt;
+&lt;img src="/pictures/shadowbox-logo.png" alt="/pictures/shadowbox-logo.png"&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="sect1"&gt;
+&lt;h2 id="_what_is_shadowbox"&gt;What is Shadowbox?&lt;/h2&gt;
+&lt;div class="sectionbody"&gt;
+&lt;div class="paragraph"&gt;&lt;p&gt;Shadowbox is a new way to think about portable enterprise-grade labs and demonstrations. It is a fully portable (weighs less than 60 pounds), enterprise-grade platform that can run complex solutions-oriented demonstrations and labs.&lt;/p&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="sect1"&gt;
+&lt;h2 id="_what_is_this_site_for"&gt;What is this Site for?&lt;/h2&gt;
+&lt;div class="sectionbody"&gt;
+&lt;div class="paragraph"&gt;&lt;p&gt;This site will maintain all of the documentation around the Shadowbox efforts. Material lists, Assembly Notes, and examples of when it&amp;#8217;s used will all live here. It will also provide a central area to link up all of the various tools that are required to make something this complex work well.&lt;/p&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</content><category term="about"></category><category term="intro"></category></entry><entry><title>The Kingsmill Release</title><link href="https://www.rhshadowbox.com/introducing-shadowbox.html" rel="alternate"></link><published>2016-10-24T14:03:05-04:00</published><updated>2016-10-24T14:17:02-04:00</updated><author><name>Jamie Duncan</name></author><id>tag:www.rhshadowbox.com,2016-10-24:/introducing-shadowbox.html</id><summary type="html">A quick write-up of the first iteration of Shadowbox</summary><content type="html">&lt;div class="sect1"&gt;
+&lt;h2 id="_kingsmill"&gt;Kingsmill&lt;/h2&gt;
+&lt;div class="sectionbody"&gt;
+&lt;div class="paragraph"&gt;&lt;p&gt;Every year the Red Hat Public Sector Team has an off-site event. For the past few years it has been held at the &lt;a href="https://www.kingsmill.com"&gt;Kingsmill Golf Resort&lt;/a&gt;. It&amp;#8217;s a frantic 3 days of meetings, training, and networking. This year someone had the amazing idea of holding a &lt;em&gt;Demo Jam&lt;/em&gt;.&lt;/p&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="sect1"&gt;
+&lt;h2 id="_demo_jam"&gt;Demo Jam&lt;/h2&gt;
+&lt;div class="sectionbody"&gt;
+&lt;div class="paragraph"&gt;&lt;p&gt;The rules were pretty simple. You came up with the coolest demo you could think of using Red Hat products. You had 10 minutes after dinner on Wednesday night at Kingsmill to show it to everyone at the event (~350 people this year). After everyone was done, the team with the loudest applause won.&lt;/p&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="sect1"&gt;
+&lt;h2 id="_revision_0_the_kingsmill_release"&gt;Revision 0 - The Kingsmill release&lt;/h2&gt;
+&lt;div class="sectionbody"&gt;
+&lt;div class="paragraph"&gt;&lt;p&gt;We had gotten approval to put Shadowbox together a couple of months ago, but our day jobs had interfered with making much progress. We set ourselves a deadline of getting something ready for the Kingsmill Demo Jam. We didn&amp;#8217;t have to have the entire thing polished and ready, but it needed to show multiple products simultaneously.&lt;/p&gt;&lt;/div&gt;
+&lt;div class="paragraph"&gt;&lt;p&gt;We ended up getting 4 nodes up and running (we ran out of &lt;a href="http://www.mini-box.com/s.nl/it.A/id.417/.f"&gt;Pico PSUs&lt;/a&gt;). On these 4 nodes we were able to run:&lt;/p&gt;&lt;/div&gt;
+&lt;div class="sect2"&gt;
+&lt;h3 id="_the_infrastructure"&gt;The Infrastructure&lt;/h3&gt;
+&lt;div class="ulist"&gt;&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;
+DNS and DHCP for the network
+&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;
+RHEV-M on a physical node with DNS/DHCP
+&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;
+Gluster on a single node
+&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;
+2 RHEL 7 hypervisors conncted to RHEV-M
+&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;&lt;/div&gt;
+&lt;div class="paragraph"&gt;&lt;p&gt;On top of that we deployed:&lt;/p&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="sect2"&gt;
+&lt;h3 id="_the_platform"&gt;The Platform&lt;/h3&gt;
+&lt;div class="ulist"&gt;&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;
+OpenShift 3.3
+&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;
+Configured to use the Gluster hardware node for Persistant Volume
+&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;&lt;/div&gt;
+&lt;div class="paragraph"&gt;&lt;p&gt;Inside OpenShift we deployed a &lt;a href="https://github.com/jduncan-rva/php-demo-app"&gt;PHP web app&lt;/a&gt; that is a simple image uploader application.&lt;/p&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="sect2"&gt;
+&lt;h3 id="_the_demo"&gt;The Demo&lt;/h3&gt;
+&lt;div class="paragraph"&gt;&lt;p&gt;For our 10 minutes on stage we explained what we had made, and then we let everyone in the room connect to the Shadowbox&amp;#8217;s integrated Wifi. Since we control DNS in that network they were able to browse to our app deployed in OpenShift using an &lt;span class="monospaced"&gt;example.com&lt;/span&gt; domain.&lt;/p&gt;&lt;/div&gt;
+&lt;div class="paragraph"&gt;&lt;p&gt;We had a great time, and everything worked just like it was supposed to.&lt;/p&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</content><category term="rev0"></category><category term="kingsmill"></category></entry></feed>
