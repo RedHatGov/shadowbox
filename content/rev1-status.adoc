@@ -18,15 +18,17 @@ All of the Rev1 tasks are tracked on link:https://trello.com/b/KyamOxNo/shadowbo
 * There is one bad node (motherboard is suspected to be DOA). So we have 7 nodes functional. This is stopping us from the planned configuration of a 2-node control plane.
 * There is a process to set up the router to work inside and outside the RedHat intranet. Many thanks to Kevin Jones.
 * The 2-node control plane will have an additional 2TB of storage via SSDs donated by link:https://www.nimblestorage.com/[Nimble Storage]. The current stack outline when fully deployed will be:
-  * 2-node self-hosted RHEV cluster for the control plane housing
-    * Cloudforms for automation / front door access
-    * Satellite 6 for content management
-    * Ansible Tower for automated deployments
-    * IPA for identity management
-    * OpenStack Undercloud
-  * 2TB Gluster cluster on the control plane nodes
-  * 6 node hyper-converged OSP-latest/Ceph installation
-  * OpenShift deployed into OpenStack
+** 2-node self-hosted RHEV cluster for the control plane housing
+*** Cloudforms for automation / front door access
+*** Satellite 6 for content management
+*** Ansible Tower for automated deployments
+*** IPA for identity management
+*** OpenStack Undercloud
+** 2TB Gluster cluster on the control plane nodes
+** 6 node hyper-converged OSP-latest/Ceph installation
+** OpenShift deployed into OpenStack
+
+We should be functionally using ever prodcut in the Red Hat Emerging Technology portfolio inside Shadowbox!
 
 == Major Lessons / TODO
 
