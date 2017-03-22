@@ -8,7 +8,7 @@
 :tags: about,intro
 :pin: True
 
-image::pictures/shadowbox-logo.png[]
+image::/pictures/shadowbox-logo.png[]
 
 == What is Shadowbox?
 
