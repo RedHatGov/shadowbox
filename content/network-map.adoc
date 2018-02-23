@@ -29,15 +29,15 @@ At the end of the day, the link:http://www.cisco.com/c/en/us/products/collateral
 |=========================================================
 | Port    |  Speed      |    Connection                 | IP               | VLANs  | MAC
 | 1       |   1Gbps     | User Network                  | 192.168.1.1      |  2     | E4:8D:8C:7D:B4:2D
-| 2       |   1Gbps     |||
-| 3       |   1Gbps     |||
-| 4       |   1Gbps     |||
-| 5       |   1Gbps     |||
-| 6       |   100Mbps   |||
-| 7       |   100Mbps   |||
-| 8       |   100Mbps   |||
-| 9       |   100Mbps   |||
-| 10      |   100Mbps   |||
+| 2       |   1Gbps     ||||
+| 3       |   1Gbps     ||||
+| 4       |   1Gbps     ||||
+| 5       |   1Gbps     ||||
+| 6       |   100Mbps   ||||
+| 7       |   100Mbps   ||||
+| 8       |   100Mbps   ||||
+| 9       |   100Mbps   ||||
+| 10      |   100Mbps   ||||
 |=========================================================
 
 
